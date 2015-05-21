@@ -1,4 +1,4 @@
-package org.gr.pm.db;
+package org.gr.comeco.db;
 
 import java.io.IOException;
 import java.util.Properties;

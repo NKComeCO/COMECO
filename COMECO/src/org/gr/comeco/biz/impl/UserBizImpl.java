@@ -1,9 +1,9 @@
-package org.gr.pm.biz.impl;
+package org.gr.comeco.biz.impl;
 
-import org.gr.pm.biz.IUserBiz;
-import org.gr.pm.dao.IUserDao;
-import org.gr.pm.dao.impl.UserDaoImpl;
-import org.gr.pm.po.User;
+import org.gr.comeco.biz.IUserBiz;
+import org.gr.comeco.dao.IUserDao;
+import org.gr.comeco.dao.impl.UserDaoImpl;
+import org.gr.comeco.po.User;
 
 public class UserBizImpl implements IUserBiz {
 	private IUserDao userDao;

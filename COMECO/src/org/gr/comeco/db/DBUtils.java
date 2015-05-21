@@ -1,4 +1,4 @@
-package org.gr.pm.db;
+package org.gr.comeco.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,8 +1,8 @@
-package org.gr.pm.dao;
+package org.gr.comeco.dao;
 
 import java.util.List;
 
-import org.gr.pm.po.User;
+import org.gr.comeco.po.User;
 
 
 public interface IUserDao {

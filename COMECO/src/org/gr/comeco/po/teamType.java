@@ -1,4 +1,4 @@
-package org.gr.pm.po;
+package org.gr.comeco.po;
 
 public class teamType {
 	private int id,teamid,typeid;

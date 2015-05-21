@@ -1,4 +1,4 @@
-package org.gr.pm.dao.impl;
+package org.gr.comeco.dao.impl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.gr.pm.dao.IUserDao;
-import org.gr.pm.db.ConnectionManager;
-import org.gr.pm.db.DBUtils;
-import org.gr.pm.po.User;
+import org.gr.comeco.dao.IUserDao;
+import org.gr.comeco.db.ConnectionManager;
+import org.gr.comeco.db.DBUtils;
+import org.gr.comeco.po.User;
 
 
 public class UserDaoImpl implements IUserDao {

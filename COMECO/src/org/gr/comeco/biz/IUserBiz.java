@@ -1,6 +1,6 @@
-package org.gr.pm.biz;
+package org.gr.comeco.biz;
 
-import org.gr.pm.po.User;
+import org.gr.comeco.po.User;
 
 
 public interface IUserBiz {

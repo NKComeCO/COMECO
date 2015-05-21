@@ -1,4 +1,4 @@
-package org.gr.pm.servlet;
+package org.gr.comeco.servlet;
 
 import java.io.IOException;
 
@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.gr.pm.biz.IUserBiz;
-import org.gr.pm.biz.impl.UserBizImpl;
-import org.gr.pm.po.User;
+import org.gr.comeco.biz.IUserBiz;
+import org.gr.comeco.biz.impl.UserBizImpl;
+import org.gr.comeco.po.User;
 
 /**
  * Servlet implementation class RegistServlet
