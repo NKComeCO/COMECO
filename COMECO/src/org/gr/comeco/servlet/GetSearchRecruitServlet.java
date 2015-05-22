@@ -1,7 +1,6 @@
 package org.gr.comeco.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -18,13 +17,13 @@ import org.gr.comeco.po.Recruit;
 /**
  * Servlet implementation class LoginServlet
  */
-public class GetNewRecruitServlet extends HttpServlet {
+public class GetSearchRecruitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetNewRecruitServlet() {
+	public GetSearchRecruitServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -50,15 +49,13 @@ public class GetNewRecruitServlet extends HttpServlet {
 				
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+
+		String name = new String(request.getParameter("txt").getBytes("iso8859-1"), "UTF-8");
 		
-		
-		List<Recruit> recruitl = new RecruitBizImpl().searchNew();
-		
-		List<Recruit> printl=new ArrayList<Recruit>();
-		for(int i=0;i<10&&i<recruitl.size();i++)printl.add(recruitl.get(i));
+		List<Recruit> recruitl = new RecruitBizImpl().searchByTeamname(name);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("recruitl", printl);
+		session.setAttribute("recruitl", recruitl);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
 		dispatcher.forward(request, response);

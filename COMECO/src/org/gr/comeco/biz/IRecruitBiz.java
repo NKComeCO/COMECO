@@ -7,5 +7,6 @@ import org.gr.comeco.po.Recruit;
 
 public interface IRecruitBiz {
 	public List<Recruit> searchNew();
+	public List<Recruit> searchByTeamname(String name);
 
 }

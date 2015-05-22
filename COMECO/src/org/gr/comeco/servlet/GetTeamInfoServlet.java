@@ -1,8 +1,6 @@
 package org.gr.comeco.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.gr.comeco.biz.impl.RecruitBizImpl;
-import org.gr.comeco.po.Recruit;
+import org.gr.comeco.biz.impl.TeamBizImpl;
+import org.gr.comeco.po.Team;
 
 
 /**
  * Servlet implementation class LoginServlet
  */
-public class GetNewRecruitServlet extends HttpServlet {
+public class GetTeamInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetNewRecruitServlet() {
+	public GetTeamInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -50,15 +48,13 @@ public class GetNewRecruitServlet extends HttpServlet {
 				
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+
+		int id = Integer.parseInt(new String(request.getParameter("id").getBytes("iso8859-1"), "UTF-8"));
 		
-		
-		List<Recruit> recruitl = new RecruitBizImpl().searchNew();
-		
-		List<Recruit> printl=new ArrayList<Recruit>();
-		for(int i=0;i<10&&i<recruitl.size();i++)printl.add(recruitl.get(i));
+		Team team = new TeamBizImpl().SearchById(id);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("recruitl", printl);
+		session.setAttribute("team", team);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
 		dispatcher.forward(request, response);

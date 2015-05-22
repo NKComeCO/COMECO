@@ -13,4 +13,10 @@ public class RecruitBizImpl implements IRecruitBiz {
 		return null;
 	}
 
+	@Override
+	public List<Recruit> searchByTeamname(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
