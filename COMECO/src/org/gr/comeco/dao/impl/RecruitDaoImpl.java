@@ -9,7 +9,6 @@ import org.gr.comeco.dao.IRecruitDao;
 import org.gr.comeco.db.ConnectionManager;
 import org.gr.comeco.db.DBUtils;
 import org.gr.comeco.po.Recruit;
-import org.gr.comeco.po.User;
 
 public class RecruitDaoImpl implements IRecruitDao {
 
@@ -70,6 +69,24 @@ public class RecruitDaoImpl implements IRecruitDao {
 
 	@Override
 	public List<Recruit> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int deleteById(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Recruit r) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Recruit> selectNew(int number) {
 		// TODO Auto-generated method stub
 		return null;
 	}

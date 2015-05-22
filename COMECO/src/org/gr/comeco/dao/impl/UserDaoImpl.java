@@ -102,6 +102,51 @@ public class UserDaoImpl implements IUserDao {
 	}
 
 	@Override
+	public List<User> selectTop(int number) {
+		// TODO Auto-generated method stub
+		// 步骤1：创建一个空的集合准备存放查询的结果
+		List<User> lstUser = new ArrayList<User>();
+		// 步骤2：获取一个数据库的连接对象
+		this.connection = connectionManager.openConnection();
+		// 步骤3：创建查询语句的模板
+		//String strSQL = "select * from user order by id";
+		String strSQL = "select * from user order by score";
+		// 步骤4：使用dbutils方法实现查询操作
+		ResultSet resultSet = this.dbUtils.execQuery(connection, strSQL,
+				new Object[] {});
+		// 步骤5：将resultSet结果集转换成List数据结构
+		try {
+			for (int i=0;i<number&&resultSet.next();i++) {
+				// 步骤5-1：创建一个对象
+				User user = new User();
+				user.setId(resultSet.getInt(1));
+				user.setGender(resultSet.getInt(2));
+				user.setEmail(resultSet.getString(3));
+				user.setPassword(resultSet.getString(4));
+				user.setName(resultSet.getString(5));
+				user.setLevel(resultSet.getInt(6));
+				user.setDistrict(resultSet.getString(7));
+				user.setScore(resultSet.getInt(8));
+				user.setSchool(resultSet.getString(9));
+				user.setMajor(resultSet.getString(10));
+				user.setIntroduce(resultSet.getString(11));
+				user.setImage(resultSet.getString(12));
+				// 步骤5-2：将封装好的对象添加到List集合中
+				lstUser.add(user);
+			}
+			// 返回结果
+			return lstUser;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} finally {
+			// 步骤6：关闭数据库连接
+			this.connectionManager.closeConnection(connection);
+		}
+	}
+
+	@Override
 	public int deleteById(int userId) {
 		// TODO Auto-generated method stub
 		// 步骤1：获取一个数据库连接对象

@@ -12,6 +12,8 @@ public interface IUserDao {
 	public abstract int update(final User user);
 
 	public abstract List<User> selectAll();
+	
+	public abstract List<User> selectTop(final int number);
 
 	public abstract User selectById(final int userId);
 

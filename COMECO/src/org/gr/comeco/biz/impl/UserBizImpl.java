@@ -1,5 +1,7 @@
 package org.gr.comeco.biz.impl;
 
+import java.util.List;
+
 import org.gr.comeco.biz.IUserBiz;
 import org.gr.comeco.dao.IUserDao;
 import org.gr.comeco.dao.impl.UserDaoImpl;
@@ -33,6 +35,12 @@ public class UserBizImpl implements IUserBiz {
 	public User searchById(int id) {
 		// TODO Auto-generated method stub
 		return userDao.selectById(id);
+	}
+
+	@Override
+	public List<User> searchAll() {
+		// TODO Auto-generated method stub
+		return userDao.selectAll();
 	}
 
 }
