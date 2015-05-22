@@ -2,7 +2,7 @@ package org.gr.comeco.po;
 
 import java.sql.Date;
 
-public class team {
+public class Team {
 	private int id;
 	private String name;
 	private int max_mem;
@@ -11,7 +11,7 @@ public class team {
 	private Date start_time,end_time;
 	
 	
-	public team(int id, String name, int max_mem, int leader_id, String image,
+	public Team(int id, String name, int max_mem, int leader_id, String image,
 			Date start_time, Date end_time) {
 		super();
 		this.id = id;

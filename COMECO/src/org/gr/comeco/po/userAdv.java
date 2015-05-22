@@ -1,9 +1,9 @@
 package org.gr.comeco.po;
 
-public class userAdv {
+public class UserAdv {
 	private int id,userid,advid;
 
-	public userAdv(int id, int userid, int advid) {
+	public UserAdv(int id, int userid, int advid) {
 		super();
 		this.id = id;
 		this.userid = userid;

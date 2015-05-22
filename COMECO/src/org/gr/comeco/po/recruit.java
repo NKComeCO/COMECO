@@ -1,6 +1,6 @@
 package org.gr.comeco.po;
 
-public class recruit {
+public class Recruit {
 	private int id,teamid;
 	private String intro,contact;
 	public int getId() {

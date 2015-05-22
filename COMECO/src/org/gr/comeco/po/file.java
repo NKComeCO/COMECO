@@ -1,10 +1,10 @@
 package org.gr.comeco.po;
 
-public class file {
+public class File {
 	private int id;
 	private int teamid;
 	private String file;
-	public file(int id, int teamid, String file) {
+	public File(int id, int teamid, String file) {
 		super();
 		this.id = id;
 		this.teamid = teamid;

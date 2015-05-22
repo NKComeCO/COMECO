@@ -1,9 +1,9 @@
 package org.gr.comeco.po;
 
-public class praise {
+public class Praise {
 	private int id,give,accept;
 
-	public praise(int id, int give, int accept) {
+	public Praise(int id, int give, int accept) {
 		super();
 		this.id = id;
 		this.give = give;

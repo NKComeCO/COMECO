@@ -1,9 +1,9 @@
 package org.gr.comeco.po;
 
-public class advantage {
+public class Advantage {
 	private int id;
 	private String name;
-	public advantage(int id, String name) {
+	public Advantage(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

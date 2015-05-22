@@ -1,9 +1,9 @@
 package org.gr.comeco.po;
 
-public class type {
+public class Type {
 	private int id;
 	private String name;
-	public type(int id, String name) {
+	public Type(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

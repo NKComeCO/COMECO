@@ -1,10 +1,10 @@
 package org.gr.comeco.po;
 
-public class member {
+public class Member {
 	private int id;
 	private int teamid;
 	private int userid;
-	public member(int id, int teamid, int userid) {
+	public Member(int id, int teamid, int userid) {
 		super();
 		this.id = id;
 		this.teamid = teamid;

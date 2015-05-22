@@ -2,7 +2,7 @@ package org.gr.comeco.po;
 
 import java.sql.Date;
 
-public class notice {
+public class Notice {
 	private int id;
 	private int teamid;
 	private int author;
@@ -10,7 +10,7 @@ public class notice {
 	private Date time;
 	
 	
-	public notice(int id, int teamid, int author, String content, Date time) {
+	public Notice(int id, int teamid, int author, String content, Date time) {
 		super();
 		this.id = id;
 		this.teamid = teamid;

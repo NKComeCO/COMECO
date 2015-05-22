@@ -1,11 +1,11 @@
 package org.gr.comeco.po;
 
-public class attention {
+public class Attention {
 	private int id;
 	private int u1;
 	private int u2;
 	
-	public attention(int id, int u1, int u2) {
+	public Attention(int id, int u1, int u2) {
 		super();
 		this.id = id;
 		this.u1 = u1;

@@ -1,9 +1,9 @@
 package org.gr.comeco.po;
 
-public class teamType {
+public class TeamType {
 	private int id,teamid,typeid;
 
-	public teamType(int id, int teamid, int typeid) {
+	public TeamType(int id, int teamid, int typeid) {
 		super();
 		this.id = id;
 		this.teamid = teamid;
