@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
       <meta charset="utf-8" />
-      <title>comeco</title>
+      <title>Search Results</title>
       <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit,      AngularJS, ui route, charts, widgets, components" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -180,6 +180,7 @@
                   <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
                   <span class="input-group-btn">
                     <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
+
                   </span>
                 </div>
               </div>
@@ -201,13 +202,13 @@
                 <!-- 下拉个人信息-->
                 <ul class="dropdown-menu animated fadeInRight w">
                   <li>
-                    <a href>
+                    <a href="personaldetails.html">
                     <i class="icon-user icon text-success-lter"></i>
                       <span>个人信息</span>
                     </a>
                   </li>
                   <li>
-                  <a href="">
+                  <a href="mygroups.html">
                     <i class="glyphicon icon-bubbles text-success"></i>
                     <span>我的小组</span>
                     </a>
@@ -399,10 +400,9 @@
                           </div>
                         </div>
                         <div class="col-sm-5">
-                          <div class="pull-right pull-none-xs text-center">
-                            <a href class="m-b-md inline m">
+                          <div class="pull-right pull-none-xs text-center">  <a href class="m-b-md inline m">
                               <span class="h3 block font-bold">100</span>
-                              <i class="glyphicon glyphicon-heart text-danger-dker"></i>
+                              <i class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
                             </a>
                              <a href class="m-b-md inline m">
                               
@@ -419,182 +419,118 @@
                    
                     </ul>
                   </div>
-				  
-                  
-                  <!--搜索结果-->
-                  <div class="padder">
-                    <table width="100%" border="0" height="auto">
-                      <tr>
-                      
-                        <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                          </table>	
-						</div>				
-						</td>
-						
-                        <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                           
-                          </table>	
-						</div>				
-						</td>
-						
-                          <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                           
-                          </table>	
-						</div>				
-						</td>
-						
-                         <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                          
-                          </table>	
-						</div>				
-						</td>
-                      </tr>
-                    <tr>
-                         <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                          
-                          </table>	
-						</div>				
-						</td>
-						
-                        <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                          </table>	
-						</div>				
-						</td>
-						
-                          <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="100%" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                          
-                          </table>	
-						</div>				
-						</td>
-						
-                         <td height="218">
-						<div class="panel b-a" style="height:150px; width:200px">
-						  <table width="200" border="0">
-                            <tr>
-                              <td height="60">
-                              <img src="img/b18.jpg" alt="" width="100%" height="106" align="absmiddle" title="Wooden Decals"/>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td height="51">
-                              项目类别：
-                              <br>
-                              成员类型：
-                              </td>
-                            </tr>
-                          
-                          </table>	
-						</div>				
-						</td>
-						
-                      </tr>
-                     
-                    </table>
+                 
+                  <br>
+                  <!--搜索结果显示-->
+                  <ul>
+                  <ul>
+                  <ul class="nav nav-pills nav-sm">
+                 
+                           <!--exmp1--->
+                   <li>
+                   <div class="panel b-light clearfix">
+                  <div class="panel-body">
+                    <a href="" class="thumb pull-left m-r">
+                      <img src="img/slide1.jpg" class="img-circle">
+                    </a>
+                    <div class="clear">
+                      <a href class="text-info">@队伍名称 <i class="fa fa-twitter"></i></a>
+                      <small class="block text-muted">队长名字</small>
+                      <small class="block text-muted">队伍类型</small>
+                      <small class="block text-muted">成员人数</small>
+                      <a href class="btn btn-xs btn-success m-t-xs">点击查看</a>
+                    </div>
                   </div>
                 </div>
-				<!--/搜索列表-->
+                 </li>
+                 <!--/exmp1--->
+                 
+                 <!--exmp2--->
+                                   <li>
+                   <div class="panel b-light clearfix">
+                  <div class="panel-body">
+                    <a href="" class="thumb pull-left m-r">
+                      <img src="img/slide1.jpg" class="img-circle">
+                    </a>
+                    <div class="clear">
+                      <a href class="text-info">@队伍名称 <i class="fa fa-twitter"></i></a>
+                      <small class="block text-muted">队长名字</small>
+                      <small class="block text-muted">队伍类型</small>
+                      <small class="block text-muted">成员人数</small>
+                      <a href class="btn btn-xs btn-success m-t-xs">点击查看</a>
+                    </div>
+                  </div>
+                </div>
+                 </li>
+                 <!--/exmp2--->
+                 
+                   <!--exmp3--->
+                  <li>
+                   <div class="panel b-light clearfix">
+                  <div class="panel-body">
+                    <a href="" class="thumb pull-left m-r">
+                      <img src="img/slide1.jpg" class="img-circle">
+                    </a>
+                    <div class="clear">
+                      <a href class="text-info">@队伍名称 <i class="fa fa-twitter"></i></a>
+                      <small class="block text-muted">队长名字</small>
+                      <small class="block text-muted">队伍类型</small>
+                      <small class="block text-muted">成员人数</small>
+                      <a href class="btn btn-xs btn-success m-t-xs">点击查看</a>
+                    </div>
+                  </div>
+                </div>
+                 </li>
+                 <!--/exmp3--->
+                  
+                   <!--exmp4--->
+                                   <li>
+                   <div class="panel b-light clearfix">
+                  <div class="panel-body">
+                    <a href="" class="thumb pull-left m-r">
+                      <img src="img/slide1.jpg" class="img-circle">
+                    </a>
+                    <div class="clear">
+                      <a href class="text-info">@队伍名称 <i class="fa fa-twitter"></i></a>
+                      <small class="block text-muted">队长名字</small>
+                      <small class="block text-muted">队伍类型</small>
+                      <small class="block text-muted">成员人数</small>
+                      <a href class="btn btn-xs btn-success m-t-xs">点击查看</a>
+                    </div>
+                  </div>
+                </div>
+                 </li>
+                 <!--/exmp4--->
+                 
+                   <!--exmp5--->
+                  <li>
+                   <div class="panel b-light clearfix">
+                  <div class="panel-body">
+                    <a href="" class="thumb pull-left m-r">
+                      <img src="img/slide1.jpg" class="img-circle">
+                    </a>
+                    <div class="clear">
+                      <a href class="text-info">@队伍名称 <i class="fa fa-twitter"></i></a>
+                      <small class="block text-muted">队长名字</small>
+                      <small class="block text-muted">队伍类型</small>
+                      <small class="block text-muted">成员人数</small>
+                      <a href class="btn btn-xs btn-success m-t-xs">点击查看</a>
+                    </div>
+                  </div>
+                </div>
+                 </li>
+                 <!--/exmp5--->
+                  
+                  </ul>
+                  </ul>
+                  </ul>
+                   </div> 
+                   
+   			     <!--搜索结果显示-->
                 
 				<!--右侧人物风云榜-->
-                <div class="col w-lg bg-light lter b-l bg-auto">
-                  <div class="wrapper">
+               <div class="col w-lg bg-light lter b-l bg-auto">
+               <div class="wrapper">
                     <div class="">
                       <i class="glyphicon glyphicon-flag well-lg text-success"></i>
                       <span class="m-t-xs m-b-xs STYLE2">人物风云榜Top10</span>
@@ -604,7 +540,7 @@
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
 						  <!--头像-->
-                            <img src="img/a4.jpg" alt="..." class="img-circle">
+                            <img src="img/a4.jpg" alt="..." class="img-rounded">
 						  <!--/头像-->
 						  <!--状态 在线-->
                             <i class="on b-white bottom"></i>
@@ -623,7 +559,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a5.jpg" alt="..." class="img-circle">
+                            <img src="img/a5.jpg" alt="..." class="img-rounded">
                             <i class="on b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -635,7 +571,7 @@
                         </li>
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a6.jpg" alt="..." class="img-circle">
+                            <img src="img/a6.jpg" alt="..." class="img-rounded">
                             <i class="busy b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -649,7 +585,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -663,7 +599,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -677,7 +613,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -691,7 +627,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -705,7 +641,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -719,7 +655,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -733,7 +669,7 @@
 						<!--人物名片-->
                         <li class="list-group-item">
                           <a herf class="pull-left thumb-sm avatar m-r">
-                            <img src="img/a7.jpg" alt="..." class="img-circle">
+                            <img src="img/a7.jpg" alt="..." class="img-rounded">
                             <i class="away b-white bottom"></i>
                           </a>
                           <div class="clear">
@@ -751,7 +687,6 @@
 					<hr>
 					<!--平台资讯-->
                     <div class="panel b-a">
-                  
                   <i class="glyphicon glyphicon-globe well-lg text-success-dker"></i>
                      <span  class="m-t-xs m-b-xs STYLE3">平台资讯</span>			  
 					

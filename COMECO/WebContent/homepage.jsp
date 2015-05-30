@@ -421,7 +421,7 @@
                           <div class="pull-right pull-none-xs text-center">
                             <a href class="m-b-md inline m">
                               <span class="h3 block font-bold">100</span>
-                              <i class="glyphicon glyphicon-heart text-danger-dker"></i>
+                              <i class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
                             </a>
                             <a href class="m-b-md inline m">
                               
