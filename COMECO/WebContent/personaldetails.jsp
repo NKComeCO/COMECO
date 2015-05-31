@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
 <link rel="stylesheet" href="css/font.css" type="text/css" />
 <link rel="stylesheet" href="css/app.css" type="text/css" />
+ <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <style type="text/css">
 #preview {
 	width: 130px;
@@ -531,7 +532,7 @@
                                                 <!--开始时间--->
                                                 <span class="right">选择开始时间</span>
                                                 <div class="form-group">
-                                                <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+  <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                                                 <input class="form-control" size="6" type="text" value="" name="" readonly>
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>  
@@ -542,7 +543,7 @@
                                                  <!---结束时间--->
                                                  <span class="right">选择结束时间 </span>
                                                  <div class="form-group">
-                                                 <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+    <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                                                 <input class="form-control" size="6" type="text" value="" name="" readonly>
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
@@ -764,10 +765,8 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/jquery/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 	<script type="text/javascript">
-		//å¾çä¸ä¼ é¢è§    IEæ¯ç¨äºæ»¤éã
-		
 			   $('.form_datetime').datetimepicker({
 				//language:  'fr',
 				weekStart: 1,
@@ -799,8 +798,6 @@
 				maxView: 1,
 				forceParse: 0
 			});
-	  
-		
 		
 		function previewImage(file) {
 			var MAXWIDTH = 260;
