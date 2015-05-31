@@ -92,12 +92,6 @@
 
 <body>
 
-	<c:if test="${empty requestScope.GetInfo }">
-		<script>
-			window.location = "/COMECO/GetMyMesg";
-		</script>
-	</c:if>
-
 	<div class="app app-header-fixed" id="app">
 		<!-- å¯¼èªæ  -->
 		<div class="app-header navbar">

@@ -720,7 +720,7 @@
 											<img id="img" class="img-circle" border=0
 												src="img/head_180.jpg" width="130" height="130" />
 										</div>
-										<input type="file" onChange="previewImage(this)" />
+										<input type="file" name="fileField"  onChange="previewImage(this)" />
 									</div>
 								</div>
 								<div class="panel b-a">

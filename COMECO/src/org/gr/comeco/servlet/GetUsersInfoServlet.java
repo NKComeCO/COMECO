@@ -51,6 +51,8 @@ public class GetUsersInfoServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
+		Integer.parseInt(new String(request.getParameter("id").getBytes("iso8859-1"), "UTF-8"));
+		
 		List<User> userl = new UserBizImpl().searchAll();
 		if (userl == null) {
 			request.setAttribute("errorInfo", "name");
@@ -59,9 +61,6 @@ public class GetUsersInfoServlet extends HttpServlet {
 		}
 		List<User> printl=new ArrayList<User>();
 		for(int i=0;i<10;i++)printl.add(userl.get(i));
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("userl", printl);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
 		dispatcher.forward(request, response);
