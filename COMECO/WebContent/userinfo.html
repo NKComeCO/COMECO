@@ -620,20 +620,16 @@
 							<!--äººç©é£äºæ¦-->
 
 							<!--å¹³å°èµè®¯-->
-                            
 							<div class="panel b-a">
-                            
 
 								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
 								<span class="m-t-xs m-b-xs STYLE3">${sessionScope.user.name}的个人名片</span> <span
 									class="m-t-xs m-b-xs STYLE4"></span><br>
 
-								<form action="" method="get">
 									<table width="250" class="table table-condensed">
 										<tr>
 											<td><span>昵称</span></td>
-											<td><input name="user_name" type="text"
-												placeholder=${sessionScope.user.name}></td>
+											<td>${sessionScope.user.name}</td>
 										</tr>
 										<tr>
 											<td><span>邮箱</span></td>
@@ -643,44 +639,43 @@
 										</tr>
 										<tr>
 											<td><span>性别</span></td>
-											<td><label> <input type="radio"
-													name="user_gender" value="0" id="user_gender_0"> <i
-													class="icon icon-symbol-female text-danger"></i></label> <label>
-													<input type="radio" name="user_gender" value="1"
-													id="user_gender_1"> <i
-													class="icon icon-symbol-male text-info"></i>
-											</label></td>
+											<td><label>  
+                                            <!--女-->
+                                            <i class="icon icon-symbol-female text-danger"></i>
+                                             <!--/女-->
+                                            </label> 
+                                            <!---男--->
+                                            <label>
+											 <i class="icon icon-symbol-male text-info"></i>
+											</label>
+                                            <!---/男--->
+                                            </td>
 										</tr>
 										<tr>
 											<td><span>特长</span></td>
 											<td><c:forEach items="${requestScope.advantages }"
 													var="advantage">
 													<label> <br>
-													<input type="checkbox" name="user_adv" value="2"
-														id="user_adv_0"> ${advantage.name} </br>
+													${advantage.name} </br>
 													</label>
 												</c:forEach>
 											</td>
 										</tr>
 										<tr>
 											<td><span>地区</span></td>
-											<td><input name="user_district" type="text"
-												placeholder=${sessionScope.user.district}></td>
+											<td>${sessionScope.user.district}</td>
 										</tr>
 										<tr>
 											<td><span>学校</span></td>
-											<td><input name="user_school" type="text"
-												placeholder=${sessionScope.user.school}></td>
+											<td>${sessionScope.user.school}</td>
 										</tr>
 										<tr>
 											<td><span>专业</span></td>
-											<td><input name="user_major" type="text"
-												placeholder=${sessionScope.user.major}></td>
+											<td>${sessionScope.user.major}</td>
 										</tr>
 										<tr>
 											<td><span>水平</span></td>
-											<td><input name="user_level" type="text"
-												placeholder=${sessionScope.user.level}></td>
+											<td>${sessionScope.user.level}</td>
 										</tr>
 										<tr>
 											<td><span>点赞</span></td>
@@ -688,64 +683,13 @@
 										</tr>
 										<tr>
 											<td><span>介绍</span></td>
-											<td><textarea name="user_introduce" type="textarea"
-													placeholder=${sessionScope.user.introduce } rows="2"
-													cols="18"></textarea></td>
+											<td>${sessionScope.user.introduce }</td>
 										</tr>
 										<tr>
 
 										</tr>
 									</table>
 							</div>
-
-							<div class="panel b-a">
-
-								<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">用户头像</span>
-								<div align="center">
-
-									<!---å¤´å--->
-									<div id="preview">
-										<img id="img" class="img-circle" border=0
-											src="img/head_180.jpg" width="130" height="130" />
-									</div>
-									<input type="file" onChange="previewImage(this)" />
-								</div>
-							</div>
-							<div class="panel b-a">
-
-
-								<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">注册信息</span>
-								<table class="table table-condensed">
-									<tr>
-										<td><span>旧密码</span></td>
-										<td><input name="user_old_password" type="password"
-											placeholder="" size="19"></td>
-									</tr>
-									<tr>
-										<td><span>新密码</span></td>
-										<td><input name="user_new_password" type="password"
-											placeholder="" size="19"></td>
-									</tr>
-									</tr>
-
-								</table>
-							</div>
-
-
-							<table align="center">
-								<tr>
-									<td></td>
-									<td>
-										<button type="submit" class="btn btn-sm btn-default m-t-sm">
-											<a href="">修改</a>
-										</button>
-									</td>
-								</tr>
-							</table>
-                         </form>
-
 							<!--å¹³å°èµè®¯-->
 						</div>
 					</div>
