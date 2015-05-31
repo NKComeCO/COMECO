@@ -7,7 +7,7 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<servlet>
 		<description></description>
 		<display-name>LoginServlet</display-name>
@@ -18,5 +18,38 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet>
+		<description></description>
+		<display-name>RegistServlet</display-name>
+		<servlet-name>RegistServlet</servlet-name>
+		<servlet-class>org.gr.comeco.servlet.RegistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegistServlet</servlet-name>
+		<url-pattern>/RegistServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>GetNewRecruitServlet</display-name>
+		<servlet-name>GetNewRecruitServlet</servlet-name>
+		<servlet-class>org.gr.comeco.servlet.GetNewRecruitServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetNewRecruitServlet</servlet-name>
+		<url-pattern>/GetNewRecruitServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>GetTopUsersServlet</display-name>
+		<servlet-name>GetTopUsersServlet</servlet-name>
+		<servlet-class>org.gr.comeco.servlet.GetTopUsersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetTopUsersServlet</servlet-name>
+		<url-pattern>/GetTopUsersServlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>

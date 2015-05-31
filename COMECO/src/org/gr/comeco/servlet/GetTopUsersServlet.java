@@ -58,10 +58,12 @@ public class GetTopUsersServlet extends HttpServlet {
 			return;
 		}
 		List<User> printl=new ArrayList<User>();
-		for(int i=0;i<10;i++)printl.add(userl.get(i));
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("userl", printl);
+		if(userl!=null)
+			for(int i=0;i<10&&i<userl.size();i++)printl.add(userl.get(i));
+
+		request.setAttribute("hasUser", "OK");
+		request.setAttribute("userl", printl);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
 		dispatcher.forward(request, response);

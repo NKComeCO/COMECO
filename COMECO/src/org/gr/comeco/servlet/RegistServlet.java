@@ -2,6 +2,7 @@ package org.gr.comeco.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -50,22 +51,28 @@ public class RegistServlet extends HttpServlet {
 		}
 		
 		User newUser = new User();
-		newUser.setGender(Integer.parseInt(request.getParameter("gender")));
+
+		String username=request.getParameter("name");
+		
+		newUser.setGender(0);
 		newUser.setEmail(new String(request.getParameter("email").getBytes("iso8859-1"), "UTF-8"));
 		newUser.setPassword(new String(request.getParameter("password").getBytes("iso8859-1"), "UTF-8"));
-		newUser.setName(new String(request.getParameter("name").getBytes("iso8859-1"), "UTF-8"));
-		newUser.setLevel(Integer.parseInt(request.getParameter("level")));
-		newUser.setDistrict(new String(request.getParameter("district").getBytes("iso8859-1"), "UTF-8"));
+		newUser.setName(new String(username.getBytes("iso8859-1"), "UTF-8"));
+		newUser.setLevel(0);
+		newUser.setDistrict("");
 		newUser.setScore(0);
-		newUser.setSchool(new String(request.getParameter("school").getBytes("iso8859-1"), "UTF-8"));
-		newUser.setMajor(new String(request.getParameter("major").getBytes("iso8859-1"), "UTF-8"));
-		newUser.setIntroduce(new String(request.getParameter("intro").getBytes("iso8859-1"), "UTF-8"));
-		newUser.setImage(new String(request.getParameter("image").getBytes("iso8859-1"), "UTF-8"));
+		newUser.setSchool("");
+		newUser.setMajor("");
+		newUser.setIntroduce("");
+		newUser.setImage("");
 		
 		userbiz.addUser(newUser);
 		newUser=userbiz.searchByEmail(email);
 		HttpSession session = request.getSession();
 		session.setAttribute("user", newUser);
+		
+		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

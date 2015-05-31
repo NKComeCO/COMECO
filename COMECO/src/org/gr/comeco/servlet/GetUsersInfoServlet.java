@@ -11,21 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.gr.comece.vo.TRecruit;
-import org.gr.comeco.biz.impl.RecruitBizImpl;
-import org.gr.comeco.po.Recruit;
+import org.gr.comeco.biz.impl.UserBizImpl;
+import org.gr.comeco.po.User;
 
 
 /**
  * Servlet implementation class LoginServlet
  */
-public class GetNewRecruitServlet extends HttpServlet {
+public class GetUsersInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetNewRecruitServlet() {
+	public GetUsersInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -52,15 +51,17 @@ public class GetNewRecruitServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
+		List<User> userl = new UserBizImpl().searchAll();
+		if (userl == null) {
+			request.setAttribute("errorInfo", "name");
+			response.getWriter().write("usernameError");
+			return;
+		}
+		List<User> printl=new ArrayList<User>();
+		for(int i=0;i<10;i++)printl.add(userl.get(i));
 		
-		List<TRecruit> recruitl = new RecruitBizImpl().searchNew();
-		
-		List<TRecruit> printl=new ArrayList<TRecruit>();
-		if(recruitl!=null)
-			for(int i=0;i<10&&i<recruitl.size();i++)printl.add(recruitl.get(i));
-
-		request.setAttribute("GetRecruit", "OK");
-		request.setAttribute("recruitl", printl);
+		HttpSession session = request.getSession();
+		session.setAttribute("userl", printl);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
 		dispatcher.forward(request, response);

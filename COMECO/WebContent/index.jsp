@@ -50,7 +50,7 @@
 				<div class="templatemo_title">
 					<a href="#">COMECO</a>
 				</div>
-				<div class="templatemo_subtitle">å¤§å­¦çç«èµé¡¹ç®éä¼ç®¡çç³»ç»</div>
+				<div class="templatemo_subtitle">大学生项目管理平台</div>
 			</div>
 			<div class="col-md-6 col-sm-6"></div>
 		</div>
@@ -142,28 +142,28 @@
 											<li>
 												<div class="slider-caption">
 													<h2>COMECO</h2>
-													<span>å¤§å­¦çé¡¹ç®ç®¡çç³»ç»</span>
+													<span>大学生项目管理平台</span>
 												</div> <img src="img/slide1.jpg" alt="Slide 1">
 											</li>
 
 											<li>
 												<div class="slider-caption">
 													<h2>COMECO</h2>
-													<p>å¤§å­¦çé¡¹ç®ç®¡çç³»ç»</p>
+													<p>大学生项目管理平台</p>
 												</div> <img src="img/slide2.jpg" alt="Slide 2">
 											</li>
 
 											<li>
 												<div class="slider-caption">
 													<h2>COMECO</h2>
-													<p>å¤§å­¦çé¡¹ç®ç®¡çç³»ç»</p>
+													<p>大学生项目管理平台</p>
 												</div> <img src="img/slide3.jpg" alt="Slide 3">
 											</li>
 
 											<li>
 												<div class="slider-caption">
 													<h2>COMECO</h2>
-													<p>å¤§å­¦çé¡¹ç®ç®¡çç³»ç»</p>
+													<p>大学生项目管理平台</p>
 												</div> <img src="img/slide4.jpg" alt="Slide 4">
 											</li>
 
@@ -199,7 +199,7 @@
 
 						<div class="row">
 							<div class="col-md-8 col-sm-12">
-								<form action="/PM/LoginServlet" id="contact_form">
+								<form action="/COMECO/LoginServlet" id="contact_form">
 									<div class="templatemo_textbox">
 
 										<input name="email" type="text" class="form-control"
@@ -220,7 +220,7 @@
 									<button type="submit" class="btn btn-success">
 										<a class="STYLE1">确认</a>
 									</button>
-									<a href="">å¿è®°å¯ç </a>
+									<a href=""> </a>
 							</div>
 							</form>
 							<div class="clear"></div>
@@ -249,33 +249,33 @@
 					<div class="clear"></div>
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
-							<form action="#" id="contact_form">
+							<form action="/COMECO/RegistServlet" id="contact_form">
 								<div class="templatemo_textbox">
 
-									<input name="fullname" type="text" class="form-control"
-										id="fullname" placeholder="é®ç®±å°å">
+									<input name="name" type="text" class="form-control"
+										id="name" placeholder="用户名">
 								</div>
 								<div class="clear"></div>
 								<br>
 
 								<div class="templatemo_textbox">
-									<input name="password" type="text" class="form-control"
-										id="email" placeholder="å¯ç ">
+									<input name="password" type="password" class="form-control"
+										id="password" placeholder="密码">
 								</div>
 								<div class="clear"></div>
 
 								<br>
 
 								<div class="templatemo_textbox">
-									<input name="name" type="text" class="form-control" id="email"
-										placeholder="æ¨çæµç§°">
+									<input name="email" type="text" class="form-control" id="email"
+										placeholder="Email">
 								</div>
 								<div class="clear"></div>
 
 								<br>
 
 								<button type="submit" class="btn btn-success">
-									<a class="show-2 templatemo_page2 STYLE1" href="#">ç«å³æ³¨å</a>
+									<a class="show-2 templatemo_page2 STYLE1" href="#">注册</a>
 								</button>
 
 
@@ -293,7 +293,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1>æä»¬çä»»å¡</h1>
+							<h1>网站介绍</h1>
 						</div>
 					</div>
 					<div class="row">
@@ -345,7 +345,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1>æä»¬çå°ç»</h1>
+							<h1>开发成员介绍</h1>
 						</div>
 					</div>
 					<div class="clear"></div>
