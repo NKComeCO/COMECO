@@ -414,7 +414,7 @@
 							<ul>
 								<ul class="nav nav-pills nav-sm">
 
-									<!--exmp1--->
+									<!--按队伍搜索exmp1--->
 									  <li>
                    <div class="panel b-light clearfix">
                   <div class="panel-body">
@@ -431,7 +431,69 @@
                   </div>
                 </div>
                  </li>
-                                   <!--/exmp1--->
+               <!--/按队伍搜索exmp1--->
+               
+               <!--按成员搜索exmp1-->
+               			<table class="table table-condensed">
+												<thead>
+													<tr>
+														<th>头像</th>
+														<th>昵称</th>
+														<th>地区</th>
+														<th>点赞</th>
+													</tr>
+												</thead>
+												<c:forEach items="${requestScope.myFriends }" var="user">
+												
+													<tbody>
+														<tr>
+															<td><a href class="thumb-xs pull-left m-r">
+                                                             <img src="img/slide1.jpg" class="img-circle">
+															</a></td>
+															<td>${user.name}</td>
+															<td>${user.district}</td>
+															<td><i
+												class="glyphicon glyphicon-thumbs-up text-2x text-danger-dk">${user.scroe}</i></td>
+
+														</tr>
+													</tbody>
+												</c:forEach>
+
+											</table>
+               <!--按成员搜索exmp1-->
+               
+               <!--按招聘信息搜索-->
+               <div class="streamline b-l b-info m-l-lg m-b padder-v">
+								<c:forEach items="${requestScope.recruitl }" var="recruit">
+									<!--小组信息-->
+									<a href="" class="pull-left thumb-sm avatar m-l-n-md"> <img
+										src="img/b18.jpg" alt="" align="absmiddle"
+										title="Wooden Decals" />
+									</a>
+									<div class="m-l-lg">
+										<div class="m-b-xs">
+											<a ref="post.jsp?postid=${post.postId }" class="h4">${recruit.name}</a>
+											<span class="text-muted m-l-sm pull-right">联系方式：
+												${recruit.contact} </span>
+										</div>
+										<div class="m-b">
+											<div>${recruit.intro}</div>
+											<div class="m-t-sm">
+												<a href class="text-muted m-xs"><i
+													class="icon-action-redo"></i></a> <a href
+													class="text-muted m-xs"><i class="icon-star"></i></a> <a
+													href class="text-muted m-xs"><i class="icon-refresh"></i>
+													13</a>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<!--小组信息-->
+								</c:forEach>
+							</div>
+               <!--/按招聘信息搜索-->
+               
+               
 								</ul>
 							</ul>
 						</ul>
@@ -439,194 +501,73 @@
 
 					<!--æç´¢ç»ææ¾ç¤º-->
 
-					<!--å³ä¾§äººç©é£äºæ¦-->
+						<!--右侧人物风云榜-->
 					<div class="col w-lg bg-light lter b-l bg-auto">
 						<div class="wrapper">
 							<div class="">
 								<i class="glyphicon glyphicon-flag well-lg text-success"></i> <span
-									class="m-t-xs m-b-xs STYLE2">äººç©é£äºæ¦Top10</span>
+									class="m-t-xs m-b-xs STYLE2">人物风云榜Top10</span>
 								<div style="height: 180px; overflow-y: auto; overflow-x: hidden">
 									<ul class="list-group no-bg no-borders pull-in">
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <!--å¤´å--> <img
-												src="img/a4.jpg" alt="..." class="img-rounded"> <!--/å¤´å-->
-												<!--ç¶æ å¨çº¿--> <i class="on b-white bottom"></i> <!--/ç¶æ å¨çº¿-->
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Chris Fox</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small>
-											</div></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a5.jpg" alt="..." class="img-rounded"> <i
-												class="on b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Mogen Polish</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a6.jpg" alt="..." class="img-rounded"> <i
-												class="busy b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Joge Lucky</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
-										<!--äººç©åç-->
-										<li class="list-group-item"><a herf
-											class="pull-left thumb-sm avatar m-r"> <img
-												src="img/a7.jpg" alt="..." class="img-rounded"> <i
-												class="away b-white bottom"></i>
-										</a>
-											<div class="clear">
-												<div>
-													<a href>Folisise Chosielie</a> <i
-														class="glyphicon glyphicon-heart-empty text-danger"></i> <span
-														class="">300</span>
-												</div>
-												<small class="text-muted">äººç©æ ç­¾</small></li>
-										<!--/äººç©åç-->
+										<c:forEach items="${requestScope.userl }" var="user">
+											<!--人物名片-->
+											<li class="list-group-item"><a herf
+												class="pull-left thumb-sm avatar m-r"> <!--头像--> <img
+													src="img/a4.jpg" alt="..." class="img-circle"> <!--/头像-->
+													<!--状态 在线--> <i class="on b-white bottom"></i> <!--/状态 在线-->
+											</a>
+												<div class="clear">
+													<div>
+														<a href>${user.name }</a> <i
+															class="glyphicon glyphicon-heart-empty text-danger"></i>
+														<span class="">${user.score }</span>
+													</div>
+													<small class="text-muted">${user.district }</small>
+												</div></li>
+											<!--/人物名片-->
+										</c:forEach>
 									</ul>
 								</div>
 							</div>
-							<!--äººç©é£äºæ¦-->
+							<!--人物风云榜-->
 							<hr>
-							<!--å¹³å°èµè®¯-->
+							<!--平台资讯-->
 							<div class="panel b-a">
+
 								<i class="glyphicon glyphicon-globe well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">å¹³å°èµè®¯</span>
+								<span class="m-t-xs m-b-xs STYLE3">平台资讯</span>
 
 								</li>
 								<li class="line dk"></li> <i
 									class="glyphicon glyphicon-calendar icon text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE4">å¬å</span><br> <small
+								<span class="m-t-xs m-b-xs STYLE4">公告</span><br> <small
 									class="m-2 STYLE6"> <marquee direction="up"
 										behavior="scroll" width="auto" height="180px"
 										onMouseOver="this.stop()" onMouseOut="this.start()"
 										scrollamoun="5">
-										åå¼å¤§å­¦æ¯å½å®¶æè²é¨ç´å±éç¹ç»¼åæ§å¤§å­¦ï¼æ¯æ¬ç±çå¨æ©æ¥æ»ççæ¯æ ¡ãåå¼å¤§å­¦ç±ä¸¥ä¿®ãå¼ ä¼¯èç§æ¿æè²æå½çå¿µååï¼èå§äº1904å¹´ï¼æç«äº1919å¹´ã1937å¹´æ ¡å­é­ä¾µåæ¥åç¸æ¯ï¼å­¦æ ¡åè¿ï¼1938å¹´ä¸åäº¬å¤§å­¦ãæ¸åå¤§å­¦åç»è¥¿åèåå¤§å­¦ï¼è¢«èªä¸ºâå­¦åºåè¾°âã1946å¹´åæ´¥å¤æ ¡å¹¶æ¹ä¸ºå½ç«ãæ°ä¸­å½æç«åï¼ç»åé«ç­æè²é¢ç³»è°æ´ï¼æä¸ºæçå¹¶éçå¨å½éç¹å¤§å­¦ãæ¹é©å¼æ¾ä»¥æ¥ï¼å¤©æ´¥å¯¹å¤è´¸æå­¦é¢ãä¸­å½ææ¸¸ç®¡çå¹²é¨å­¦é¢ç¸ç»§å¹¶å¥ï¼ç»æè²é¨ä¸å¤©æ´¥å¸å±å»ºæ¯æï¼å­¦æ ¡åå±æä¸ºå½å®¶â211å·¥ç¨âåâ985å·¥ç¨âéç¹å»ºè®¾çç»¼åæ§ç ç©¶åå¤§å­¦ãåå¼å¤§å­¦åæâåå¬åè½ï¼æ¥æ°æå¼âçæ ¡è®­ï¼å¼æ¬âç±å½ãæ¬ä¸ãåæ°ãä¹ç¾¤âçä¼ ç»åâæä»¥æ²»å½ãçä»¥å¼ºå½ãåä»¥å¯å½âççå¿µï¼ä»¥âç¥ä¸­å½ï¼æå¡ä¸­å½âä¸ºå®æ¨ï¼ä»¥æ°åºæ ¡åå¨æ©æ¥ä¸ºæ¥·æ¨¡ï¼ä½è²è±æï¼ç¹è£å­¦æ¯ï¼å¼ºå½å´é¦ï¼ä¼ æ¿ææï¼åªåå»ºè®¾ä¸çä¸æµå¤§å­¦ã
+										南开大学是国家教育部直属重点综合性大学，是敬爱的周恩来总理的母校。南开大学由严修、张伯苓秉承教育救国理念创办，肇始于1904年，成立于1919年。1937年校园遭侵华日军炸毁，学校南迁，1938年与北京大学、清华大学合组西南联合大学，被誉为“学府北辰”。1946年回津复校并改为国立。新中国成立后，经历高等教育院系调整，成为文理并重的全国重点大学。改革开放以来，天津对外贸易学院、中国旅游管理干部学院相继并入，经教育部与天津市共建支持，学校发展成为国家“211工程”和“985工程”重点建设的综合性研究型大学。南开大学坚持“允公允能，日新月异”的校训，弘扬“爱国、敬业、创新、乐群”的传统和“文以治国、理以强国、商以富国”的理念，以“知中国，服务中国”为宗旨，以杰出校友周恩来为楷模，作育英才，繁荣学术，强国兴邦，传承文明，努力建设世界一流大学。
 									</marquee></small>
 
 								<li class="line dk hidden-folded"></li> <i
 									class="glyphicon glyphicon-stats icon text-success-dker"></i> <span
-									class="m-t-xs m-b-xs STYLE4">æ°é»</span> <small
+									class="m-t-xs m-b-xs STYLE4">新闻</span> <small
 									class="m-2 STYLE6"> <marquee direction="up"
 										behavior="scroll" width="auto" height="180px"
 										onMouseOver="this.stop()" onMouseOut="this.start()"
 										scrollamoun="5">
-										5æ10æ¥ï¼åå¼å¨è¯¢ä¿±ä¹é¨(NAC)å¯å¨å¤§ä¼æ¨å¨è¯¢åä¼æ ¡åæ²é¾å¨ç»æµå­¦é¢é«å±ä¸æ¥¼æ¥ååä¸¾è¡ï¼æ´»å¨æ¨å¨åå¨æ ¡åå­¦ä»ç»å¨è¯¢è¡ä¸ãä¼ æ­å¨è¯¢ç¥è¯ãåäº«èä¸ç»éªãå©åå®ä¹ æèãæ´»å¨éè¯·äºè¿åä½å½éå½åç¥åå¨è¯¢è¡ä¸æ ¡åæ¥å°æ´»å¨ç°åºï¼å¸å¼äºå¨æ ¡å¯¹å¨è¯¢è¡ä¸æå´è¶£ç¾ä½ååå­¦åä¸ãç»æµå­¦é¢åå§å¯ä¹¦è®°ãå¯é¢é¿é«çªï¼ç¤¾å¢æå¯¼æå¸ãç»æµå­¦é¢ç»æµç ç©¶æå¯ææèæå¹¿åºå¸­ã
+										5月10日，南开咨询俱乐部(NAC)启动大会暨咨询名企校友沙龙在经济学院高层一楼报告厅举行，活动旨在向全校同学介绍咨询行业、传播咨询知识、分享职业经验、助力实习招聘。活动邀请了近十位国际国内知名咨询行业校友来到活动现场，吸引了全校对咨询行业感兴趣百余名同学参与。经济学院党委副书记、副院长高琪，社团指导教师、经济学院经济研究所副教授薄文广出席。
 									</marquee></small>
 
 								</ul>
 							</div>
-							<!--å¹³å°èµè®¯-->
+							<!--平台资讯-->
 						</div>
 					</div>
 				</div>
 				<!-- PASTE above -->
 			</div>
 		</div>
-		<!-- /å³ä¾§ç½è²åå®¹ -->
+		<!-- /右侧白色内容 -->
 
 		<!-- footer -->
 		<div class="app-footer wrapper b-t bg-light">
