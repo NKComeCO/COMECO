@@ -763,9 +763,45 @@
 	<!-- jQuery -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/jquery/bootstrap.js"></script>
-	<script src="js/edit.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 	<script type="text/javascript">
 		//å¾çä¸ä¼ é¢è§    IEæ¯ç¨äºæ»¤éã
+		
+			   $('.form_datetime').datetimepicker({
+				//language:  'fr',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+				showMeridian: 1
+			});
+			$('.form_date').datetimepicker({
+				language:  'fr',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				minView: 2,
+				forceParse: 0
+			});
+			$('.form_time').datetimepicker({
+				language:  'fr',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 1,
+				minView: 0,
+				maxView: 1,
+				forceParse: 0
+			});
+	  
+		
+		
 		function previewImage(file) {
 			var MAXWIDTH = 260;
 			var MAXHEIGHT = 180;

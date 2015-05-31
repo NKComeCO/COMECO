@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
 <link rel="stylesheet" href="css/font.css" type="text/css" />
 <link rel="stylesheet" href="css/app.css" type="text/css" />
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <style type="text/css">
 <!--
 .STYLE00 {
