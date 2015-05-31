@@ -11,19 +11,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.gr.comeco.biz.impl.RecruitBizImpl;
+import org.gr.comeco.biz.impl.TeamBizImpl;
+import org.gr.comeco.biz.impl.UserBizImpl;
 import org.gr.comeco.po.Recruit;
+import org.gr.comeco.po.Team;
+import org.gr.comeco.po.User;
 
 
 /**
  * Servlet implementation class LoginServlet
  */
-public class GetSearchRecruitServlet extends HttpServlet {
+public class GetSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetSearchRecruitServlet() {
+	public GetSearchServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -49,15 +53,35 @@ public class GetSearchRecruitServlet extends HttpServlet {
 				
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		
+		int type=Integer.parseInt(request.getParameter("type"));
 
 		String name = new String(request.getParameter("txt").getBytes("iso8859-1"), "UTF-8");
 		
-		List<Recruit> recruitl = new RecruitBizImpl().searchByTeamname(name);
+		switch(type){
+		case 0:
+			List<Team> teaml = new TeamBizImpl().SearchByName(name);
+
+			request.setAttribute("isTeam", "OK");
+			request.setAttribute("teaml", teaml);
+			break;
+		case 1:
+			List<User> userl = new UserBizImpl().SearchByName(name);
+
+			request.setAttribute("isUser", "OK");
+			request.setAttribute("userl", userl);
+			break;
+		case 2:
+			
+			List<Recruit> recruitl = new RecruitBizImpl().searchByTeamname(name);
+
+			request.setAttribute("isRecruit", "OK");
+			request.setAttribute("recruitl", recruitl);
+			
+			break;
+		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("recruitl", recruitl);
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("searchresult.jsp");
 		dispatcher.forward(request, response);
 	}
 

@@ -56,4 +56,10 @@ public class UserBizImpl implements IUserBiz {
 		return null;
 	}
 
+	@Override
+	public List<User> SearchByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

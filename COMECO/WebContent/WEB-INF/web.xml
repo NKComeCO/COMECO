@@ -63,4 +63,15 @@
 		<url-pattern>/GetMyMesg</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<description></description>
+		<display-name>GetSearchServlet</display-name>
+		<servlet-name>GetSearchServlet</servlet-name>
+		<servlet-class>org.gr.comeco.servlet.GetSearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetSearchServlet</servlet-name>
+		<url-pattern>/GetSearchServlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>

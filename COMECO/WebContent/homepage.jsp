@@ -224,7 +224,7 @@
 				<!--下拉菜单以及链接-->
 
 				<!-- 搜索框-->
-				<form class="navbar-form navbar-form-sm navbar-left shift"
+				<form action="/COMECO/GetSearchServlet" class="navbar-form navbar-form-sm navbar-left shift"
 					ui-shift="prependTo" data-target=".navbar-collapse" role="search"
 					ng-controller="TypeaheadDemoCtrl">
 					<div class="form-group">
