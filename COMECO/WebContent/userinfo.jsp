@@ -390,15 +390,15 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black">${sessionScope.user.name}</span>
-												<small class="m-l">${sessionScope.user.district}</small>
+												<span class="h3 text-black">${requestScope.user.name}</span>
+												<small class="m-l">${requestScope.user.district}</small>
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">${sessionScope.user.score}</span>
+												class="h3 block font-bold">${requestScope.user.score}</span>
 												<i
 												class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
 											</a> <a href class="m-b-md inline m"> </a>
@@ -617,13 +617,13 @@
 							<div class="panel b-a">
 
 								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">${sessionScope.user.name}的个人名片</span> <span
+								<span class="m-t-xs m-b-xs STYLE3">${requestScope.user.name}的个人名片</span> <span
 									class="m-t-xs m-b-xs STYLE4"></span><br>
 
 									<table width="250" class="table table-condensed">
 										<tr>
 											<td><span>昵称</span></td>
-											<td>${sessionScope.user.name}</td>
+											<td>${requestScope.user.name}</td>
 										</tr>
 										<tr>
 											<td><span>邮箱</span></td>
@@ -657,19 +657,19 @@
 										</tr>
 										<tr>
 											<td><span>地区</span></td>
-											<td>${sessionScope.user.district}</td>
+											<td>${requestScope.user.district}</td>
 										</tr>
 										<tr>
 											<td><span>学校</span></td>
-											<td>${sessionScope.user.school}</td>
+											<td>${requestScope.user.school}</td>
 										</tr>
 										<tr>
 											<td><span>专业</span></td>
-											<td>${sessionScope.user.major}</td>
+											<td>${requestScope.user.major}</td>
 										</tr>
 										<tr>
 											<td><span>水平</span></td>
-											<td>${sessionScope.user.level}</td>
+											<td>${requestScope.user.level}</td>
 										</tr>
 										<tr>
 											<td><span>点赞</span></td>
@@ -677,7 +677,7 @@
 										</tr>
 										<tr>
 											<td><span>介绍</span></td>
-											<td>${sessionScope.user.introduce }</td>
+											<td>${requestScope.user.introduce }</td>
 										</tr>
 										<tr>
 
