@@ -401,7 +401,10 @@
 												class="h3 block font-bold">${requestScope.user.score}</span>
 												<i
 												class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
-											</a> <a href class="m-b-md inline m"> </a>
+											</a> <a href class="m-b-md inline m">
+                                            <span class="h3 block font-bold">添加好友</span>
+                                            <i class="glyphicon glyphicon-plus text-danger-dker text-2x"></i>
+                                             </a>
 										</div>
 									</div>
 								</div>
