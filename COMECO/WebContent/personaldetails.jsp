@@ -36,6 +36,9 @@
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
 }
 
+#team_img{
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+}
 <!--
 .STYLE00 {
 	color: #7BD983;
@@ -418,6 +421,7 @@
 									<li class="active"><a href="#2">我管理的小组</a></li>
 									<li><a href="#3">我的好友</a></li>
 									<li><a href="#4">我加入的小组</a></li>
+                                    <li><a href="#5">创建小组</a></li>
 
 								</ul>
 								<div class="streamline b-l b-success m-l-lg m-b padder-v">
@@ -512,6 +516,84 @@
 											</table>
 
 										</div>
+                        
+                                 <!--创建小组页面--> 
+                                              <div class="tab-pane" id="5">
+                                               <div align="center">
+                                                <form name="form2" method="post" action="">
+                                                <!---头像--->
+                                                <div id="preview">
+                                                <img id="team_img" class="img-circle" border=0 src="img/head_180.jpg" width="130" height="130"/>
+                                                </div>
+                                                <input type="file" onChange="previewImage(this)"/>
+                                                <div class="line"></div>
+                                                
+                                                <!--开始时间--->
+                                                <span class="right">选择开始时间</span>
+                                                <div class="form-group">
+                                                <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                <input class="form-control" size="6" type="text" value="" name="" readonly>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>  
+                                                </div>
+                                                <input type="hidden" id="dtp_input1" value="" /><br/>
+                                                </div>
+                                                 
+                                                 <!---结束时间--->
+                                                 <span class="right">选择结束时间 </span>
+                                                 <div class="form-group">
+                                                 <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                <input class="form-control" size="6" type="text" value="" name="" readonly>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                                </div>
+                                               <input type="hidden" id="dtp_input1" value="" /><br/>
+                                               </div>
+                                          
+                                          <!--队伍名称--->
+                                          <span class="right">输入队伍名称</span>
+                                          <div class="form-group">
+                                        <div class="input-group col-md-5" >
+                                        <input class="form-control" size="6" type="text" value="" name="" >
+                                        </div>
+                                        </div>
+                                         <div class="line"></div>
+                                                
+                                                
+                                                <span>选择小组类型</span>
+                                                  <div>
+                                                <select name="team_type" class="w-xl">
+                                                  <option value="0" selected>工科</option>
+                                                  <option value="1">理科</option>
+                                                  <option value="2">文科</option>
+                                                  <option value="3">其他</option>
+                                                </select>
+                                                </div>
+                                          <div class="line"></div>
+                                                
+                                               <span> 选择小组人数</span>
+                                                  <div>
+                                                <select name="max_mem" class="w-xl">
+                                                  <option value="4" selected>2</option>
+                                                  <option value="5">3</option>
+                                                  <option value="6">4</option>
+                                                  <option value="7">5</option>
+                                                  <option value="8">5个以上</option>
+                                                </select>
+                                                </div>
+                                               <div class="line"></div>
+                                               
+                                               <!--提交--->
+                                               <div>
+                                              <button type="submit" class="btn btn-md btn-default m-t-md">
+                                              <a href="personaldetails.html">提交</a>
+                                             </button>
+                                             </div>
+                                             </form>
+                                             
+                                                </div>
+                                              </div>
+                                             <!--/创建小组-->
 
 									</div>
 
@@ -539,7 +621,7 @@
 							<div class="panel b-a">
 
 								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">信息列表</span> <span
+								<span class="m-t-xs m-b-xs STYLE3">${sessionScope.user.name}的个人名片</span> <span
 									class="m-t-xs m-b-xs STYLE4"></span><br>
 
 								<form action="" method="get">
@@ -551,8 +633,9 @@
 										</tr>
 										<tr>
 											<td><span>邮箱</span></td>
-											<td><i
-												class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span></td>
+											<td>
+                                            <i class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span>
+                                            </td>
 										</tr>
 										<tr>
 											<td><span>性别</span></td>
