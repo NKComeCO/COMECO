@@ -74,4 +74,15 @@
 		<url-pattern>/GetSearchServlet</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<description></description>
+		<display-name>UpdateUserInfoServlet</display-name>
+		<servlet-name>UpdateUserInfoServlet</servlet-name>
+		<servlet-class>org.gr.comeco.servlet.UpdateUserInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateUserInfoServlet</servlet-name>
+		<url-pattern>/UpdateUserInfoServlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>

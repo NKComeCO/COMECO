@@ -57,9 +57,15 @@ public class UserBizImpl implements IUserBiz {
 	}
 
 	@Override
-	public List<User> SearchByName(String name) {
+	public List<User> searchByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean changeInfo(User user) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

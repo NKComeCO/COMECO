@@ -23,7 +23,8 @@
 <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
 <link rel="stylesheet" href="css/font.css" type="text/css" />
 <link rel="stylesheet" href="css/app.css" type="text/css" />
- <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+	media="screen">
 <style type="text/css">
 #preview {
 	width: 130px;
@@ -37,9 +38,10 @@
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
 }
 
-#team_img{
+#team_img {
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
 }
+
 <!--
 .STYLE00 {
 	color: #7BD983;
@@ -251,8 +253,7 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<!--ä¸ªäººä¿¡æ¯åè¡¨-->
-					<li class="dropdown">
-                    <a href="#" data-toggle="dropdown"
+					<li class="dropdown"><a href="#" data-toggle="dropdown"
 						class="dropdown-toggle clear" data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
@@ -392,7 +393,7 @@
 								<div class="row m-t">
 									<div class="col-sm-7">
 										<a href class="thumb-lg pull-left m-r"> <img
-											src="img/a0.jpg" class="img-circle">
+											src="user_images/${sessionScope.user.image}" class="img-circle">
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
@@ -423,7 +424,7 @@
 									<li class="active"><a href="#2">我管理的小组</a></li>
 									<li><a href="#3">我的好友</a></li>
 									<li><a href="#4">我加入的小组</a></li>
-                                    <li><a href="#5">创建小组</a></li>
+									<li><a href="#5">创建小组</a></li>
 
 								</ul>
 								<div class="streamline b-l b-success m-l-lg m-b padder-v">
@@ -518,84 +519,97 @@
 											</table>
 
 										</div>
-                        
-                                 <!--创建小组页面--> 
-                                              <div class="tab-pane" id="5">
-                                               <div align="center">
-                                                <form name="form2" method="post" action="">
-                                                <!---头像--->
-                                                <div id="preview">
-                                                <img id="team_img" class="img-circle" border=0 src="img/head_180.jpg" width="130" height="130"/>
-                                                </div>
-                                                <input type="file" onChange="previewImage(this)"/>
-                                                <div class="line"></div>
-                                                
-                                                <!--开始时间--->
-                                                <span class="right">选择开始时间</span>
-                                                <div class="form-group">
-  <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                                <input class="form-control" size="6" type="text" value="" name="" readonly>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>  
-                                                </div>
-                                                <input type="hidden" id="dtp_input1" value="" /><br/>
-                                                </div>
-                                                 
-                                                 <!---结束时间--->
-                                                 <span class="right">选择结束时间 </span>
-                                                 <div class="form-group">
-    <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                                <input class="form-control" size="6" type="text" value="" name="" readonly>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                                                </div>
-                                               <input type="hidden" id="dtp_input1" value="" /><br/>
-                                               </div>
-                                          
-                                          <!--队伍名称--->
-                                          <span class="right">输入队伍名称</span>
-                                          <div class="form-group">
-                                        <div class="input-group col-md-5" >
-                                        <input class="form-control" size="6" type="text" value="" name="" >
-                                        </div>
-                                        </div>
-                                         <div class="line"></div>
-                                                
-                                                
-                                                <span>选择小组类型</span>
-                                                  <div>
-                                                <select name="team_type" class="w-xl">
-                                                  <option value="0" selected>工科</option>
-                                                  <option value="1">理科</option>
-                                                  <option value="2">文科</option>
-                                                  <option value="3">其他</option>
-                                                </select>
-                                                </div>
-                                          <div class="line"></div>
-                                                
-                                               <span> 选择小组人数</span>
-                                                  <div>
-                                                <select name="max_mem" class="w-xl">
-                                                  <option value="4" selected>2</option>
-                                                  <option value="5">3</option>
-                                                  <option value="6">4</option>
-                                                  <option value="7">5</option>
-                                                  <option value="8">5个以上</option>
-                                                </select>
-                                                </div>
-                                               <div class="line"></div>
-                                               
-                                               <!--提交--->
-                                               <div>
-                                              <button type="submit" class="btn btn-md btn-default m-t-md">
-                                              <a href="personaldetails.html">提交</a>
-                                             </button>
-                                             </div>
-                                             </form>
-                                             
-                                                </div>
-                                              </div>
-                                             <!--/创建小组-->
+
+										<!--创建小组页面-->
+										<div class="tab-pane" id="5">
+											<div align="center">
+												<form name="form2" method="post" action="">
+													<!---头像--->
+													<div id="preview">
+														<img id="team_img" class="img-circle" border=0
+															src="img/head_180.jpg" width="130" height="130" />
+													</div>
+													<input type="file" onChange="previewImage(this)" />
+													<div class="line"></div>
+
+													<!--开始时间--->
+													<span class="right">选择开始时间</span>
+													<div class="form-group">
+														<div class="input-group date form_datetime col-md-5"
+															data-date=" " data-date-format="dd MM yyyy - HH:ii p"
+															data-link-field="dtp_input1">
+															<input class="form-control" size="6" type="text" value=""
+																name="" readonly> <span
+																class="input-group-addon"><span
+																class="glyphicon glyphicon-remove"></span></span> <span
+																class="input-group-addon"><span
+																class="glyphicon glyphicon-th"></span></span>
+														</div>
+														<input type="hidden" id="dtp_input1" value="" /><br />
+													</div>
+
+													<!---结束时间--->
+													<span class="right">选择结束时间 </span>
+													<div class="form-group">
+														<div class="input-group date form_datetime col-md-5"
+															data-date=" " data-date-format="dd MM yyyy - HH:ii p"
+															data-link-field="dtp_input1">
+															<input class="form-control" size="6" type="text" value=""
+																name="" readonly> <span
+																class="input-group-addon"><span
+																class="glyphicon glyphicon-remove"></span></span> <span
+																class="input-group-addon"><span
+																class="glyphicon glyphicon-th"></span></span>
+														</div>
+														<input type="hidden" id="dtp_input1" value="" /><br />
+													</div>
+
+													<!--队伍名称--->
+													<span class="right">输入队伍名称</span>
+													<div class="form-group">
+														<div class="input-group col-md-5">
+															<input class="form-control" size="6" type="text" value=""
+																name="">
+														</div>
+													</div>
+													<div class="line"></div>
+
+
+													<span>选择小组类型</span>
+													<div>
+														<select name="team_type" class="w-xl">
+															<option value="0" selected>工科</option>
+															<option value="1">理科</option>
+															<option value="2">文科</option>
+															<option value="3">其他</option>
+														</select>
+													</div>
+													<div class="line"></div>
+
+													<span> 选择小组人数</span>
+													<div>
+														<select name="max_mem" class="w-xl">
+															<option value="4" selected>2</option>
+															<option value="5">3</option>
+															<option value="6">4</option>
+															<option value="7">5</option>
+															<option value="8">5个以上</option>
+														</select>
+													</div>
+													<div class="line"></div>
+
+													<!--提交--->
+													<div>
+														<button type="submit"
+															class="btn btn-md btn-default m-t-md">
+															<a href="personaldetails.html">提交</a>
+														</button>
+													</div>
+												</form>
+
+											</div>
+										</div>
+										<!--/创建小组-->
 
 									</div>
 
@@ -619,32 +633,33 @@
 
 							<!--äººç©é£äºæ¦-->
 
-							<!--å¹³å°èµè®¯-->
-							<div class="panel b-a">
+							<form enctype="multipart/form-data" id="contact-us"
+								action="/COMECO/UpdateUserInfoServlet" method="post">
+								<!--å¹³å°èµè®¯-->
+								<div class="panel b-a">
 
-								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">${sessionScope.user.name}的个人名片</span> <span
-									class="m-t-xs m-b-xs STYLE4"></span><br>
+									<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
+									<span class="m-t-xs m-b-xs STYLE3">${sessionScope.user.name}的个人名片</span>
+									<span class="m-t-xs m-b-xs STYLE4"></span><br>
 
-								<form action="" method="get">
 									<table width="250" class="table table-condensed">
 										<tr>
 											<td><span>昵称</span></td>
-											<td><input name="user_name" type="text"
-												placeholder=${sessionScope.user.name}></td>
+											<td><input name="name" type="text"
+												value=${sessionScope.user.name}></td>
 										</tr>
 										<tr>
 											<td><span>邮箱</span></td>
-											<td>
-                                            <i class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span>
-                                            </td>
+											<td><i
+												class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span>
+											</td>
 										</tr>
 										<tr>
 											<td><span>性别</span></td>
 											<td><label> <input type="radio"
-													name="user_gender" value="0" id="user_gender_0"> <i
+													name="gender" value="0" id="user_gender_0"> <i
 													class="icon icon-symbol-female text-danger"></i></label> <label>
-													<input type="radio" name="user_gender" value="1"
+													<input type="radio" name="gender" value="1"
 													id="user_gender_1"> <i
 													class="icon icon-symbol-male text-info"></i>
 											</label></td>
@@ -653,32 +668,31 @@
 											<td><span>特长</span></td>
 											<td><c:forEach items="${requestScope.advantages }"
 													var="advantage">
-													<label> <br>
-													<input type="checkbox" name="user_adv" value="2"
-														id="user_adv_0"> ${advantage.name} </br>
+													<label> <br> <input type="checkbox"
+														name="user_adv" value="2" id="user_adv_0">
+														${advantage.name} </br>
 													</label>
-												</c:forEach>
-											</td>
+												</c:forEach></td>
 										</tr>
 										<tr>
 											<td><span>地区</span></td>
-											<td><input name="user_district" type="text"
-												placeholder=${sessionScope.user.district}></td>
+											<td><input name="district" type="text"
+												value=${sessionScope.user.district}></td>
 										</tr>
 										<tr>
 											<td><span>学校</span></td>
-											<td><input name="user_school" type="text"
-												placeholder=${sessionScope.user.school}></td>
+											<td><input name="school" type="text"
+												value=${sessionScope.user.school}></td>
 										</tr>
 										<tr>
 											<td><span>专业</span></td>
-											<td><input name="user_major" type="text"
-												placeholder=${sessionScope.user.major}></td>
+											<td><input name="major" type="text"
+												value=${sessionScope.user.major}></td>
 										</tr>
 										<tr>
 											<td><span>水平</span></td>
-											<td><input name="user_level" type="text"
-												placeholder=${sessionScope.user.level}></td>
+											<td><input name="level" type="text"
+												value=${sessionScope.user.level}></td>
 										</tr>
 										<tr>
 											<td><span>点赞</span></td>
@@ -686,62 +700,62 @@
 										</tr>
 										<tr>
 											<td><span>介绍</span></td>
-											<td><textarea name="user_introduce" type="textarea"
-													placeholder=${sessionScope.user.introduce } rows="2"
-													cols="18"></textarea></td>
+											<td><input name="introduce" type="text"
+												value=${sessionScope.user.introduce }></input></td>
 										</tr>
 										<tr>
 
 										</tr>
 									</table>
-							</div>
-
-							<div class="panel b-a">
-
-								<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">用户头像</span>
-								<div align="center">
-
-									<!---å¤´å--->
-									<div id="preview">
-										<img id="img" class="img-circle" border=0
-											src="img/head_180.jpg" width="130" height="130" />
-									</div>
-									<input type="file" onChange="previewImage(this)" />
 								</div>
-							</div>
-							<div class="panel b-a">
+
+								<div class="panel b-a">
+
+									<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
+									<span class="m-t-xs m-b-xs STYLE3">用户头像</span>
+									<div align="center">
+
+										<!---å¤´å--->
+										<div id="preview">
+											<img id="img" class="img-circle" border=0
+												src="img/head_180.jpg" width="130" height="130" />
+										</div>
+										<input type="file" onChange="previewImage(this)" />
+									</div>
+								</div>
+								<div class="panel b-a">
 
 
-								<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">注册信息</span>
-								<table class="table table-condensed">
+									<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
+									<span class="m-t-xs m-b-xs STYLE3">注册信息</span>
+									<table class="table table-condensed">
+										<tr>
+											<td><span>旧密码</span></td>
+											<td><input name="user_old_password" type="password"
+												value="" size="19"></td>
+										</tr>
+										<tr>
+											<td><span>新密码</span></td>
+											<td><input name="user_new_password" type="password"
+												value="" size="19"></td>
+										</tr>
+										</tr>
+
+									</table>
+								</div>
+
+
+								<table align="center">
 									<tr>
-										<td><span>旧密码</span></td>
-										<td><input name="user_old_password" type="password"
-											placeholder="" size="19"></td>
+										<td></td>
+										<td>
+											<button type="submit" class="btn btn-sm btn-default m-t-sm">
+												<a href="">修改</a>
+											</button>
+										</td>
 									</tr>
-									<tr>
-										<td><span>新密码</span></td>
-										<td><input name="user_new_password" type="password"
-											placeholder="" size="19"></td>
-									</tr>
-									</tr>
-
 								</table>
-							</div>
-
-
-							<table align="center">
-								<tr>
-									<td></td>
-									<td>
-										<button type="submit" class="btn btn-sm btn-default m-t-sm">
-											<a href="">修改</a>
-										</button>
-									</td>
-								</tr>
-							</table>
+							</form>
 
 
 
@@ -765,41 +779,43 @@
 	<!-- jQuery -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/jquery/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.js"
+		charset="UTF-8"></script>
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js"
+		charset="UTF-8"></script>
 	<script type="text/javascript">
-			   $('.form_datetime').datetimepicker({
-				//language:  'fr',
-				weekStart: 1,
-				todayBtn:  1,
-				autoclose: 1,
-				todayHighlight: 1,
-				startView: 2,
-				forceParse: 0,
-				showMeridian: 1
-			});
-			$('.form_date').datetimepicker({
-				language:  'fr',
-				weekStart: 1,
-				todayBtn:  1,
-				autoclose: 1,
-				todayHighlight: 1,
-				startView: 2,
-				minView: 2,
-				forceParse: 0
-			});
-			$('.form_time').datetimepicker({
-				language:  'fr',
-				weekStart: 1,
-				todayBtn:  1,
-				autoclose: 1,
-				todayHighlight: 1,
-				startView: 1,
-				minView: 0,
-				maxView: 1,
-				forceParse: 0
-			});
-		
+		$('.form_datetime').datetimepicker({
+			//language:  'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			forceParse : 0,
+			showMeridian : 1
+		});
+		$('.form_date').datetimepicker({
+			language : 'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			minView : 2,
+			forceParse : 0
+		});
+		$('.form_time').datetimepicker({
+			language : 'fr',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 1,
+			minView : 0,
+			maxView : 1,
+			forceParse : 0
+		});
+
 		function previewImage(file) {
 			var MAXWIDTH = 260;
 			var MAXHEIGHT = 180;

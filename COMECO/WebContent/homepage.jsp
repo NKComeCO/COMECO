@@ -15,15 +15,15 @@
 <title>comeco</title>
 
 <script type='text/javascript' src='dwr/engine.js'></script>
-  <script type='text/javascript' src='dwr/util.js'></script>
-  <script type="text/javascript" src="dwr/interface/MessagePush.js"></script>
-  <script type="text/javascript">
-  		//通过该方法与后台交互，确保推送时能找到指定用户
-         function personInfo(){
-        	 window.location = "personaldetails.jsp";
+<script type='text/javascript' src='dwr/util.js'></script>
+<script type="text/javascript" src="dwr/interface/MessagePush.js"></script>
+<script type="text/javascript">
+	//通过该方法与后台交互，确保推送时能找到指定用户
+	function personInfo() {
+		window.location = "personaldetails.jsp";
 
-          }
-  </script>
+	}
+</script>
 
 
 <meta name="description"
@@ -131,108 +131,103 @@
 				</div>
 				<!-- / 左侧导航缩进&个人信息图标 -->
 
-				<!--下拉菜单以及链接-->
-				<ul class="nav navbar-nav hidden-sm">
-					<!--Mega-->
-					<li class="dropdown pos-stc"><a href="#"
-						data-toggle="dropdown" class="dropdown-toggle"> <span
-							class="m-t-xs m-b-xs STYLE5">搜索选项</span> <span class="caret"></span>
-					</a>
-						<div class="dropdown-menu wrapper w-full bg-white">
-							<div class="row">
-								<div class="col-sm-4">
-									<!--项目的选项-->
-									<div class="m-l-xs m-t-xs m-b-xs font-bold">
-										<i class="icon-docs"></i> 按项目搜索
+
+				<form action="/COMECO/GetSearchServlet"
+					class="navbar-form navbar-form-sm navbar-left shift"
+					ui-shift="prependTo" data-target=".navbar-collapse" role="search"
+					ng-controller="TypeaheadDemoCtrl">
+					<!--下拉菜单以及链接-->
+					<ul class="nav navbar-nav hidden-sm">
+						<!--Mega-->
+						<li class="dropdown pos-stc"><a href="#"
+							data-toggle="dropdown" class="dropdown-toggle"> <span
+								class="m-t-xs m-b-xs STYLE5" >搜索选项</span> <span class="caret"></span>
+						</a>
+							<div class="dropdown-menu wrapper w-full bg-white">
+								<div class="row">
+									<div class="col-sm-4">
+										<form name="form1" method="post" action="">
+											<!--项目的选项-->
+											<div class="m-l-xs m-t-xs m-b-xs font-bold">
+												<i class="icon-docs"></i> 按项目搜索
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<ul class="list-unstyled l-h-2x">
+
+														<p>
+															<label> <input type="radio" name="type" value="0"
+																id="type"/> 项目名称
+															</label> <br> <label> <input type="radio"
+																name="type" value="1" id="type"/> 项目时间
+															</label> <br>
+														</p>
+
+													</ul>
+												</div>
+												<div class="col-xs-6">
+													<ul class="list-unstyled l-h-2x">
+														<label> <input type="radio" name="type" value="2"
+															id="type"/> 项目区域
+														</label>
+														<br>
+													</ul>
+												</div>
+											</div>
 									</div>
-									<form name="form1" method="post" action="">
+									<!--/项目的选项-->
+
+									<!--成员的选项-->
+									<div class="col-sm-4 b-l b-light">
+										<div class="m-l-xs m-t-xs m-b-xs font-bold">
+											<i class="icon-graduation"></i> 按成员搜索
+										</div>
 										<div class="row">
 											<div class="col-xs-6">
 												<ul class="list-unstyled l-h-2x">
-
-													<p>
-														<label> <input type="radio" name="RadioGroup1"
-															value="0" id="RadioGroup1_0"> 项目名称
-														</label> <br> <label> <input type="radio"
-															name="RadioGroup1" value="1" id="RadioGroup1_1">
-															项目时间
-														</label> <br>
-													</p>
-
+													<label> <input type="radio" name="type" value="3"
+														id="type"/> 成员名称
+													</label>
 												</ul>
 											</div>
 											<div class="col-xs-6">
 												<ul class="list-unstyled l-h-2x">
-													<label> <input type="radio" name="RadioGroup1"
-														value="2" id="RadioGroup1_1"> 项目区域
-													</label>
-													<br>
+
 												</ul>
 											</div>
 										</div>
-								</div>
-								</form>
-								<!--/项目的选项-->
-
-								<!--成员的选项-->
-								<div class="col-sm-4 b-l b-light">
-									<div class="m-l-xs m-t-xs m-b-xs font-bold">
-										<i class="icon-graduation"></i> 按成员搜索
 									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
+									<!--成员的选项-->
 
-											</ul>
+									<!--Analysis的选项-->
+									<div class="col-sm-4 b-l b-light">
+										<div class="m-l-xs m-t-xs m-b-sm font-bold">
+											<i class="icon-eyeglasses"></i> 按招聘搜索
 										</div>
-										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
-
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!--成员的选项-->
-								<!--Analysis的选项-->
-								<div class="col-sm-4 b-l b-light">
-									<div class="m-l-xs m-t-xs m-b-sm font-bold">
-										<i class="icon-eyeglasses"></i> 按招聘搜索
-									</div>
-									<div class="text-center">
-										<div class="inline">
-											<div ui-jq="easyPieChart"
-												ui-options="{
-										  percent: 65,
-										  lineWidth: 50,
-										  trackColor: '{{app.color.light}}',
-										  barColor: '{{app.color.info}}',
-										  scaleColor: false,
-										  size: 100,
-										  rotate: 90,
-										  lineCap: 'butt',
-										  animate: 2000
-										}">
+										<div class="row">
+											<div class="col-xs-6">
+												<ul class="list-unstyled l-h-2x">
+													<label> <input type="radio" name="type" value="4"
+														id="RadioGroup1_3"/> 招聘名称
+													</label>
+												</ul>
 											</div>
 										</div>
 									</div>
+									<!--/Analysis的选项-->
 								</div>
-								<!--/Analysis的选项-->
-							</div>
-						</div></li>
-					<!--/Mega-->
-				</ul>
-				<!--下拉菜单以及链接-->
+							</div></li>
+						<!--/Mega-->
+					</ul>
+					<!--下拉菜单以及链接-->
 
-				<!-- 搜索框-->
-				<form action="/COMECO/GetSearchServlet" class="navbar-form navbar-form-sm navbar-left shift"
-					ui-shift="prependTo" data-target=".navbar-collapse" role="search"
-					ng-controller="TypeaheadDemoCtrl">
+					<!-- 搜索框-->
 					<div class="form-group">
 						<div class="input-group">
-							<input type="text" ng-model="selected"
+							<input type="text" ng-model="selected" name="txt" id="txt"
 								typeahead="state for state in states | filter:$viewValue | limitTo:8"
 								class="form-control input-sm bg-light no-border rounded padder"
-								placeholder="Search projects..."> <span
+								placeholder="Search" width="100px"> <span
 								class="input-group-btn">
 								<button type="submit" class="btn btn-sm bg-light rounded">
 									<i class="fa fa-search"></i>
@@ -252,12 +247,12 @@
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
 								class="on md b-white bottom"></i>
-						</span> <span class="hidden-sm hidden-md">${sessionScope.user.name}</span> <b
-							class="caret"></b>
+						</span> <span class="hidden-sm hidden-md">${sessionScope.user.name}</span>
+							<b class="caret"></b>
 					</a> <!-- 下拉个人信息-->
 						<ul class="dropdown-menu animated fadeInRight w">
-							<li><a onclick="personInfo();"> <i class="icon-user icon text-success-lter"></i>
-									<span>个人信息</span>
+							<li><a onclick="personInfo();"> <i
+									class="icon-user icon text-success-lter"></i> <span>个人信息</span>
 							</a></li>
 							<li><a href=""> <i
 									class="glyphicon icon-bubbles text-success"></i> <span>我的小组</span>
@@ -391,15 +386,16 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black">${sessionScope.user.name}</span> <small
-													class="m-l">${sessionScope.user.district}</small>
+												<span class="h3 text-black">${sessionScope.user.name}</span>
+												<small class="m-l">${sessionScope.user.district}</small>
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">${sessionScope.user.score}</span> <i
+												class="h3 block font-bold">${sessionScope.user.score}</span>
+												<i
 												class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
 											</a> <a href class="m-b-md inline m"> </a>
 										</div>
@@ -506,7 +502,8 @@
 										onMouseOver="this.stop()" onMouseOut="this.start()"
 										scrollamoun="5">
 										5月10日，南开咨询俱乐部(NAC)启动大会暨咨询名企校友沙龙在经济学院高层一楼报告厅举行，活动旨在向全校同学介绍咨询行业、传播咨询知识、分享职业经验、助力实习招聘。活动邀请了近十位国际国内知名咨询行业校友来到活动现场，吸引了全校对咨询行业感兴趣百余名同学参与。经济学院党委副书记、副院长高琪，社团指导教师、经济学院经济研究所副教授薄文广出席。
-									</marquee></small>
+									</marquee>
+								</small>
 
 								</ul>
 							</div>

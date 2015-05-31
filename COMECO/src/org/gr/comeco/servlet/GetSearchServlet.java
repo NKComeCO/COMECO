@@ -54,7 +54,8 @@ public class GetSearchServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-		int type=Integer.parseInt(request.getParameter("type"));
+		int type=0;
+		if(request.getParameter("type")!=null)type=Integer.parseInt(new String(request.getParameter("type").getBytes("iso8859-1"), "UTF-8"));
 
 		String name = new String(request.getParameter("txt").getBytes("iso8859-1"), "UTF-8");
 		
@@ -66,7 +67,7 @@ public class GetSearchServlet extends HttpServlet {
 			request.setAttribute("teaml", teaml);
 			break;
 		case 1:
-			List<User> userl = new UserBizImpl().SearchByName(name);
+			List<User> userl = new UserBizImpl().searchByName(name);
 
 			request.setAttribute("isUser", "OK");
 			request.setAttribute("userl", userl);

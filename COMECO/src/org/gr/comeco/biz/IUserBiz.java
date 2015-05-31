@@ -20,5 +20,7 @@ public interface IUserBiz {
 
 	public abstract List<Advantage> searchAdvantage();
 
-	public abstract List<User> SearchByName(String name);
+	public abstract List<User> searchByName(String name);
+	
+	public abstract boolean changeInfo(User user);
 }
