@@ -19,4 +19,16 @@ public class TeamBizImpl implements ITeamBiz {
 		return null;
 	}
 
+	@Override
+	public List<Team> SearchByLeader(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Team> SearchByMember(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

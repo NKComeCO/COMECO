@@ -5,6 +5,7 @@ import java.util.List;
 import org.gr.comeco.biz.IUserBiz;
 import org.gr.comeco.dao.IUserDao;
 import org.gr.comeco.dao.impl.UserDaoImpl;
+import org.gr.comeco.po.Advantage;
 import org.gr.comeco.po.User;
 
 public class UserBizImpl implements IUserBiz {
@@ -41,6 +42,18 @@ public class UserBizImpl implements IUserBiz {
 	public List<User> searchAll() {
 		// TODO Auto-generated method stub
 		return userDao.selectAll();
+	}
+
+	@Override
+	public List<User> searchFriends(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Advantage> searchAdvantage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

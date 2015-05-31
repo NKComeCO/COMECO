@@ -58,7 +58,7 @@ public class RegistServlet extends HttpServlet {
 		newUser.setEmail(new String(request.getParameter("email").getBytes("iso8859-1"), "UTF-8"));
 		newUser.setPassword(new String(request.getParameter("password").getBytes("iso8859-1"), "UTF-8"));
 		newUser.setName(new String(username.getBytes("iso8859-1"), "UTF-8"));
-		newUser.setLevel(0);
+		newUser.setLevel("");
 		newUser.setDistrict("");
 		newUser.setScore(0);
 		newUser.setSchool("");

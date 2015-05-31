@@ -12,20 +12,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>comeco</title>
-
-<script type='text/javascript' src='dwr/engine.js'></script>
-  <script type='text/javascript' src='dwr/util.js'></script>
-  <script type="text/javascript" src="dwr/interface/MessagePush.js"></script>
-  <script type="text/javascript">
-  		//通过该方法与后台交互，确保推送时能找到指定用户
-         function personInfo(){
-        	 window.location = "personaldetails.jsp";
-
-          }
-  </script>
-
-
+<title>Personal Details</title>
 <meta name="description"
 	content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit,      AngularJS, ui route, charts, widgets, components" />
 <meta name="viewport"
@@ -37,6 +24,18 @@
 <link rel="stylesheet" href="css/font.css" type="text/css" />
 <link rel="stylesheet" href="css/app.css" type="text/css" />
 <style type="text/css">
+#preview {
+	width: 130px;
+	height: 130px;
+	border-radius: 350px;
+	border: 0px; solid #000;
+	overflow: hidden;
+}
+
+#img {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+}
+
 <!--
 .STYLE00 {
 	color: #7BD983;
@@ -88,18 +87,19 @@
 </head>
 
 <body>
-	<c:if test="${empty requestScope.GetRecruit }">
+
+	<c:if test="${empty requestScope.GetInfo }">
 		<script>
-			window.location = "/COMECO/GetNewRecruitServlet";
+			window.location = "/COMECO/GetMyMesg";
 		</script>
 	</c:if>
 
 	<div class="app app-header-fixed" id="app">
-		<!-- 导航栏 -->
+		<!-- å¯¼èªæ  -->
 		<div class="app-header navbar">
-			<!-- 导航栏-header -->
+			<!-- å¯¼èªæ -header -->
 			<div class="navbar-header bg-dark">
-				<!-- 没弄懂这一部分button是干嘛的-->
+				<!-- æ²¡å¼æè¿ä¸é¨åbuttonæ¯å¹²åç-->
 				<button class="pull-right visible-xs dk" data-toggle="class:show"
 					data-target=".navbar-collapse">
 					<i class="glyphicon glyphicon-cog"></i>
@@ -108,30 +108,30 @@
 					data-target=".app-aside" ui-scroll="app">
 					<i class="glyphicon glyphicon-align-justify"></i>
 				</button>
-				<!-- /没弄懂这一部分button是干嘛的-->
-				<!-- 导航栏左侧 logo comeco -->
+				<!-- /æ²¡å¼æè¿ä¸é¨åbuttonæ¯å¹²åç-->
+				<!-- å¯¼èªæ å·¦ä¾§ logo comeco -->
 				<a href="#/" class="navbar-brand text-lt"> <i class="STYLE00">comeco</i>
 				</a>
 				<!-- / logo cocome-->
 			</div>
-			<!-- / 导航栏-header -->
+			<!-- / å¯¼èªæ -header -->
 
-			<!-- 中间白色部分的导航栏 -->
+			<!-- ä¸­é´ç½è²é¨åçå¯¼èªæ  -->
 			<div
 				class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
-				<!-- 左侧导航缩进&个人信息图标-->
+				<!-- å·¦ä¾§å¯¼èªç¼©è¿&ä¸ªäººä¿¡æ¯å¾æ -->
 				<div class="nav navbar-nav hidden-xs">
-					<!-- 左侧导航缩进图标-->
+					<!-- å·¦ä¾§å¯¼èªç¼©è¿å¾æ -->
 					<a href="#" class="btn no-shadow navbar-btn"
 						data-toggle="class:app-aside-folded" data-target=".app"> <i
 						class="fa fa-dedent fa-fw text"></i> <i
 						class="fa fa-indent fa-fw text-active"></i>
 					</a>
-					<!--/左侧导航缩进图标-->
+					<!--/å·¦ä¾§å¯¼èªç¼©è¿å¾æ -->
 				</div>
-				<!-- / 左侧导航缩进&个人信息图标 -->
+				<!-- / å·¦ä¾§å¯¼èªç¼©è¿&ä¸ªäººä¿¡æ¯å¾æ  -->
 
-				<!--下拉菜单以及链接-->
+				<!--ä¸æèåä»¥åé¾æ¥-->
 				<ul class="nav navbar-nav hidden-sm">
 					<!--Mega-->
 					<li class="dropdown pos-stc"><a href="#"
@@ -141,7 +141,7 @@
 						<div class="dropdown-menu wrapper w-full bg-white">
 							<div class="row">
 								<div class="col-sm-4">
-									<!--项目的选项-->
+									<!--é¡¹ç®çéé¡¹-->
 									<div class="m-l-xs m-t-xs m-b-xs font-bold">
 										<i class="icon-docs"></i> 按项目搜索
 									</div>
@@ -152,7 +152,7 @@
 
 													<p>
 														<label> <input type="radio" name="RadioGroup1"
-															value="0" id="RadioGroup1_0"> 项目名称
+															value="0" id="RadioGroup1_0"> 按项目搜索
 														</label> <br> <label> <input type="radio"
 															name="RadioGroup1" value="1" id="RadioGroup1_1">
 															项目时间
@@ -164,7 +164,7 @@
 											<div class="col-xs-6">
 												<ul class="list-unstyled l-h-2x">
 													<label> <input type="radio" name="RadioGroup1"
-														value="2" id="RadioGroup1_1"> 项目区域
+														value="2" id="RadioGroup1_1"> 项目区域
 													</label>
 													<br>
 												</ul>
@@ -172,9 +172,9 @@
 										</div>
 								</div>
 								</form>
-								<!--/项目的选项-->
+								<!--/é¡¹ç®çéé¡¹-->
 
-								<!--成员的选项-->
+								<!--æåçéé¡¹-->
 								<div class="col-sm-4 b-l b-light">
 									<div class="m-l-xs m-t-xs m-b-xs font-bold">
 										<i class="icon-graduation"></i> 按成员搜索
@@ -192,8 +192,8 @@
 										</div>
 									</div>
 								</div>
-								<!--成员的选项-->
-								<!--Analysis的选项-->
+								<!--æåçéé¡¹-->
+								<!--Analysisçéé¡¹-->
 								<div class="col-sm-4 b-l b-light">
 									<div class="m-l-xs m-t-xs m-b-sm font-bold">
 										<i class="icon-eyeglasses"></i> 按招聘搜索
@@ -216,14 +216,14 @@
 										</div>
 									</div>
 								</div>
-								<!--/Analysis的选项-->
+								<!--/Analysisçéé¡¹-->
 							</div>
 						</div></li>
 					<!--/Mega-->
 				</ul>
-				<!--下拉菜单以及链接-->
+				<!--ä¸æèåä»¥åé¾æ¥-->
 
-				<!-- 搜索框-->
+				<!-- æç´¢æ¡-->
 				<form class="navbar-form navbar-form-sm navbar-left shift"
 					ui-shift="prependTo" data-target=".navbar-collapse" role="search"
 					ng-controller="TypeaheadDemoCtrl">
@@ -241,23 +241,23 @@
 						</div>
 					</div>
 				</form>
-				<!-- / 搜索框 -->
+				<!-- / æç´¢æ¡ -->
 
-				<!-- 导航栏右侧 -->
+				<!-- å¯¼èªæ å³ä¾§ -->
 				<ul class="nav navbar-nav navbar-right">
 
-					<!--个人信息列表-->
+					<!--ä¸ªäººä¿¡æ¯åè¡¨-->
 					<li class="dropdown"><a href="#" data-toggle="dropdown"
 						class="dropdown-toggle clear" data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
 								class="on md b-white bottom"></i>
-						</span> <span class="hidden-sm hidden-md">${sessionScope.user.name}</span> <b
-							class="caret"></b>
-					</a> <!-- 下拉个人信息-->
+						</span> <span class="hidden-sm hidden-md">${sessionScope.user.name}</span>
+							<b class="caret"></b>
+					</a> <!-- ä¸æä¸ªäººä¿¡æ¯-->
 						<ul class="dropdown-menu animated fadeInRight w">
-							<li><a onclick="personInfo();"> <i class="icon-user icon text-success-lter"></i>
-									<span>个人信息</span>
+							<li><a href> <i class="icon-user icon text-success-lter"></i>
+									<span>个人信息¯</span>
 							</a></li>
 							<li><a href=""> <i
 									class="glyphicon icon-bubbles text-success"></i> <span>我的小组</span>
@@ -267,14 +267,14 @@
 							<li><a href="signuplogin.html"> <i
 									class="glyphicon glyphicon-log-out text-success"></i> <span>退出登录</span>
 							</a></li>
-						</ul> <!-- / 下拉个人信息 --></li>
-					<!--个人消息列表-->
+						</ul> <!-- / ä¸æä¸ªäººä¿¡æ¯ --></li>
+					<!--ä¸ªäººæ¶æ¯åè¡¨-->
 				</ul>
-				<!-- / 导航栏右侧-->
+				<!-- / å¯¼èªæ å³ä¾§-->
 			</div>
-			<!-- / 中间白色部分的导航栏 -->
+			<!-- / ä¸­é´ç½è²é¨åçå¯¼èªæ  -->
 		</div>
-		<!-- / 导航栏-->
+		<!-- / å¯¼èªæ -->
 
 		<!-- 左侧菜单栏-->
 		<div class="app-aside hidden-xs bg-dark">
@@ -371,7 +371,7 @@
 		</div>
 		<!-- / 左侧菜单栏 -->
 
-		<!-- 右侧白色部分内容 -->
+		<!-- å³ä¾§ç½è²é¨ååå®¹ -->
 		<div class="app-content">
 			<div ui-butterbar></div>
 			<a href class="off-screen-toggle hide" data-toggle="class:off-screen"
@@ -391,15 +391,16 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black">${sessionScope.user.name}</span> <small
-													class="m-l">${sessionScope.user.district}</small>
+												<span class="h3 text-black">${sessionScope.user.name}</span>
+												<small class="m-l">${sessionScope.user.district}</small>
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">${sessionScope.user.score}</span> <i
+												class="h3 block font-bold">${sessionScope.user.score}</span>
+												<i
 												class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
 											</a> <a href class="m-b-md inline m"> </a>
 										</div>
@@ -407,130 +408,341 @@
 								</div>
 							</div>
 						</div>
-						<div class="wrapper bg-white b-b">
-							<ul class="nav nav-pills nav-sm">
-								<i class="glyphicon icon-action-redo text-success-dk"></i>
-								<span class="m-l-xs m-t-xs m-b-xs font-bold STYLE7">最新招聘动态</span>
-
-							</ul>
-						</div>
 
 
 
+						<!--ä¸ªäººä¿¡æ¯-->
 						<div class="padder">
-							<div class="streamline b-l b-info m-l-lg m-b padder-v">
-								<c:forEach items="${requestScope.recruitl }" var="recruit">
-									<!--小组信息-->
-									<a href="" class="pull-left thumb-sm avatar m-l-n-md"> <img
-										src="img/b18.jpg" alt="" align="absmiddle"
-										title="Wooden Decals" />
-									</a>
-									<div class="m-l-lg">
-										<div class="m-b-xs">
-											<a ref="post.jsp?postid=${post.postId }" class="h4">${recruit.name}</a>
-											<span class="text-muted m-l-sm pull-right">联系方式：
-												${recruit.contact} </span>
+							<div class="wrapper bg-white b-b">
+								<ul class="nav nav-tabs" id="myTab">
+									<li class="active"><a href="#2">我管理的小组</a></li>
+									<li><a href="#3">我的好友</a></li>
+									<li><a href="#4">我加入的小组</a></li>
+
+								</ul>
+								<div class="streamline b-l b-success m-l-lg m-b padder-v">
+									<div class="tab-content">
+
+										<div class="tab-pane active" id="2">
+											<table class="table table-hover table-condensed">
+												<thead>
+													<tr>
+														<th>小组头像</th>
+														<th>小组名</th>
+														<th>开始时间</th>
+														<th>小组人数</th>
+													</tr>
+												</thead>
+
+												<c:forEach items="${requestScope.manageTeams }" var="team">
+													<!--exmp1--->
+													<tbody>
+														<tr class="success">
+															<td><a href class="thumb-xs pull-left m-r"> <img
+																	src="img/slide1.jpg" class="img-circle">
+															</a></td>
+															<td>${team.name }</td>
+															<td>${team.start_time }</td>
+															<td>${team.max_mem }</td>
+														</tr>
+													</tbody>
+												</c:forEach>
+
+											</table>
 										</div>
-										<div class="m-b">
-											<div>${recruit.intro}</div>
-											<div class="m-t-sm">
-												<a href class="text-muted m-xs"><i
-													class="icon-action-redo"></i></a> <a href
-													class="text-muted m-xs"><i class="icon-star"></i></a> <a
-													href class="text-muted m-xs"><i class="icon-refresh"></i>
-													13</a>
-											</div>
+
+										<div class="tab-pane" id="3">
+											<table class="table table-condensed">
+												<thead>
+													<tr>
+														<th>头像</th>
+														<th>昵称</th>
+														<th>地区</th>
+														<th>点赞</th>
+													</tr>
+												</thead>
+
+
+												<c:forEach items="${requestScope.myFriends }" var="user">
+													<!--exmp1--->
+													<tbody>
+														<tr>
+															<td><a href class="thumb-xs pull-left m-r"> <img
+																	src="img/slide1.jpg" class="img-circle">
+															</a></td>
+															<td>${user.name}</td>
+															<td>${user.district}</td>
+															<td><i
+																class="glyphicon glyphicon-thumbs-up text-2x text-danger-dk">${user.scroe}</i></td>
+
+														</tr>
+													</tbody>
+												</c:forEach>
+
+											</table>
 										</div>
+
+										<div class="tab-pane" id="4">
+											<table class="table table-condensed">
+												<thead>
+													<tr>
+														<th>头像</th>
+														<th>名称</th>
+														<th>开始时间</th>
+														<th>结束时间</th>
+													</tr>
+												</thead>
+
+												<c:forEach items="${requestScope.myTeams }" var="team">
+													<!--exmp1--->
+													<tbody>
+														<tr>
+															<td><a href class="thumb-xs pull-left m-r"> <img
+																	src="img/slide1.jpg" class="img-circle">
+															</a></td>
+															<td>${team.name}</td>
+															<td>${team.start_time}</td>
+															<td><i
+																class="glyphicon glyphicon-star-empty text-2x text-warning-dk"></i></td>
+
+														</tr>
+													</tbody>
+												</c:forEach>
+
+											</table>
+
+										</div>
+
 									</div>
-									<hr>
-									<!--小组信息-->
-								</c:forEach>
 
+									<script>
+										$(function() {
+											$('#myTab a:last').tab('show');
+										})
+									</script>
 
+								</div>
 							</div>
+							<!--/ä¸ªäººä¿¡æ¯-->
 						</div>
 					</div>
 
-					<!--右侧人物风云榜-->
+					<!--å³ä¾§äººç©é£äºæ¦-->
+
 					<div class="col w-lg bg-light lter b-l bg-auto">
 						<div class="wrapper">
-							<div class="">
-								<i class="glyphicon glyphicon-flag well-lg text-success"></i> <span
-									class="m-t-xs m-b-xs STYLE2">人物风云榜Top10</span>
-								<div style="height: 180px; overflow-y: auto; overflow-x: hidden">
-									<ul class="list-group no-bg no-borders pull-in">
-										<c:forEach items="${requestScope.userl }" var="user">
-											<!--人物名片-->
-											<li class="list-group-item"><a herf
-												class="pull-left thumb-sm avatar m-r"> <!--头像--> <img
-													src="img/a4.jpg" alt="..." class="img-circle"> <!--/头像-->
-													<!--状态 在线--> <i class="on b-white bottom"></i> <!--/状态 在线-->
-											</a>
-												<div class="clear">
-													<div>
-														<a href>${user.name }</a> <i
-															class="glyphicon glyphicon-heart-empty text-danger"></i>
-														<span class="">${user.score }</span>
-													</div>
-													<small class="text-muted">${user.district }</small>
-												</div></li>
-											<!--/人物名片-->
-										</c:forEach>
-									</ul>
-								</div>
-							</div>
-							<!--人物风云榜-->
-							<hr>
-							<!--平台资讯-->
+
+
+							<!--äººç©é£äºæ¦-->
+
+							<!--å¹³å°èµè®¯-->
 							<div class="panel b-a">
 
-								<i class="glyphicon glyphicon-globe well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">平台资讯</span>
+								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
+								<span class="m-t-xs m-b-xs STYLE3">信息列表</span> <span
+									class="m-t-xs m-b-xs STYLE4"></span><br>
 
-								</li>
-								<li class="line dk"></li> <i
-									class="glyphicon glyphicon-calendar icon text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE4">公告</span><br> <small
-									class="m-2 STYLE6"> <marquee direction="up"
-										behavior="scroll" width="auto" height="180px"
-										onMouseOver="this.stop()" onMouseOut="this.start()"
-										scrollamoun="5">
-										南开大学是国家教育部直属重点综合性大学，是敬爱的周恩来总理的母校。南开大学由严修、张伯苓秉承教育救国理念创办，肇始于1904年，成立于1919年。1937年校园遭侵华日军炸毁，学校南迁，1938年与北京大学、清华大学合组西南联合大学，被誉为“学府北辰”。1946年回津复校并改为国立。新中国成立后，经历高等教育院系调整，成为文理并重的全国重点大学。改革开放以来，天津对外贸易学院、中国旅游管理干部学院相继并入，经教育部与天津市共建支持，学校发展成为国家“211工程”和“985工程”重点建设的综合性研究型大学。南开大学坚持“允公允能，日新月异”的校训，弘扬“爱国、敬业、创新、乐群”的传统和“文以治国、理以强国、商以富国”的理念，以“知中国，服务中国”为宗旨，以杰出校友周恩来为楷模，作育英才，繁荣学术，强国兴邦，传承文明，努力建设世界一流大学。
-									</marquee></small>
+								<form action="" method="get">
+									<table width="250" class="table table-condensed">
+										<tr>
+											<td><span>昵称</span></td>
+											<td><input name="user_name" type="text"
+												placeholder=${sessionScope.user.name}></td>
+										</tr>
+										<tr>
+											<td><span>邮箱</span></td>
+											<td><i
+												class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span></td>
+										</tr>
+										<tr>
+											<td><span>性别</span></td>
+											<td><label> <input type="radio"
+													name="user_gender" value="0" id="user_gender_0"> <i
+													class="icon icon-symbol-female text-danger"></i></label> <label>
+													<input type="radio" name="user_gender" value="1"
+													id="user_gender_1"> <i
+													class="icon icon-symbol-male text-info"></i>
+											</label></td>
+										</tr>
+										<tr>
+											<td><span>特长</span></td>
+											<td><c:forEach items="${requestScope.advantages }"
+													var="advantage">
+													<label> <br>
+													<input type="checkbox" name="user_adv" value="2"
+														id="user_adv_0"> ${advantage.name} </br>
+													</label>
+												</c:forEach>
+											</td>
+										</tr>
+										<tr>
+											<td><span>地区</span></td>
+											<td><input name="user_district" type="text"
+												placeholder=${sessionScope.user.district}></td>
+										</tr>
+										<tr>
+											<td><span>学校</span></td>
+											<td><input name="user_school" type="text"
+												placeholder=${sessionScope.user.school}></td>
+										</tr>
+										<tr>
+											<td><span>专业</span></td>
+											<td><input name="user_major" type="text"
+												placeholder=${sessionScope.user.major}></td>
+										</tr>
+										<tr>
+											<td><span>水平</span></td>
+											<td><input name="user_level" type="text"
+												placeholder=${sessionScope.user.level}></td>
+										</tr>
+										<tr>
+											<td><span>点赞</span></td>
+											<td><i class="glyphicon glyphicon-heart text-danger"></i><span>${sessionScope.user.score}</span></td>
+										</tr>
+										<tr>
+											<td><span>介绍</span></td>
+											<td><textarea name="user_introduce" type="textarea"
+													placeholder=${sessionScope.user.introduce } rows="2"
+													cols="18"></textarea></td>
+										</tr>
+										<tr>
 
-								<li class="line dk hidden-folded"></li> <i
-									class="glyphicon glyphicon-stats icon text-success-dker"></i> <span
-									class="m-t-xs m-b-xs STYLE4">新闻</span> <small
-									class="m-2 STYLE6"> <marquee direction="up"
-										behavior="scroll" width="auto" height="180px"
-										onMouseOver="this.stop()" onMouseOut="this.start()"
-										scrollamoun="5">
-										5月10日，南开咨询俱乐部(NAC)启动大会暨咨询名企校友沙龙在经济学院高层一楼报告厅举行，活动旨在向全校同学介绍咨询行业、传播咨询知识、分享职业经验、助力实习招聘。活动邀请了近十位国际国内知名咨询行业校友来到活动现场，吸引了全校对咨询行业感兴趣百余名同学参与。经济学院党委副书记、副院长高琪，社团指导教师、经济学院经济研究所副教授薄文广出席。
-									</marquee></small>
-
-								</ul>
+										</tr>
+									</table>
 							</div>
-							<!--平台资讯-->
+
+							<div class="panel b-a">
+
+								<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
+								<span class="m-t-xs m-b-xs STYLE3">用户头像</span>
+								<div align="center">
+
+									<!---å¤´å--->
+									<div id="preview">
+										<img id="img" class="img-circle" border=0
+											src="img/head_180.jpg" width="130" height="130" />
+									</div>
+									<input type="file" onChange="previewImage(this)" />
+								</div>
+							</div>
+							<div class="panel b-a">
+
+
+								<i class="glyphicon glyphicon-cog well-lg text-success-dker"></i>
+								<span class="m-t-xs m-b-xs STYLE3">注册信息</span>
+								<table class="table table-condensed">
+									<tr>
+										<td><span>旧密码</span></td>
+										<td><input name="user_old_password" type="password"
+											placeholder="" size="19"></td>
+									</tr>
+									<tr>
+										<td><span>新密码</span></td>
+										<td><input name="user_new_password" type="password"
+											placeholder="" size="19"></td>
+									</tr>
+									</tr>
+
+								</table>
+							</div>
+
+
+							<table align="center">
+								<tr>
+									<td></td>
+									<td>
+										<button type="submit" class="btn btn-sm btn-default m-t-sm">
+											<a href="">修改</a>
+										</button>
+									</td>
+								</tr>
+							</table>
+
+
+
+							<!--å¹³å°èµè®¯-->
 						</div>
 					</div>
 				</div>
 				<!-- PASTE above -->
 			</div>
 		</div>
-		<!-- /右侧白色内容 -->
+		<!-- /å³ä¾§ç½è²åå®¹ -->
 
 		<!-- footer -->
 		<div class="app-footer wrapper b-t bg-light">
 			<span class="pull-right">1.0.0 <a href="#app"
 				class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
-			&copy; 2015 Copyright comeco
+			&copy; 2015 Copyright. comeco
 		</div>
 		<!-- / footer -->
 	</div>
 	<!-- jQuery -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/jquery/bootstrap.js"></script>
+	<script src="js/edit.js" type="text/javascript"></script>
 	<script type="text/javascript">
+		//å¾çä¸ä¼ é¢è§    IEæ¯ç¨äºæ»¤éã
+		function previewImage(file) {
+			var MAXWIDTH = 260;
+			var MAXHEIGHT = 180;
+			var div = document.getElementById('preview');
+			if (file.files && file.files[0]) {
+				div.innerHTML = '<img id=imghead>';
+				var img = document.getElementById('imghead');
+				img.onload = function() {
+					var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT,
+							img.offsetWidth, img.offsetHeight);
+					img.width = rect.width;
+					img.height = rect.height;
+					//                 img.style.marginLeft = rect.left+'px';
+					img.style.marginTop = rect.top + 'px';
+				}
+				var reader = new FileReader();
+				reader.onload = function(evt) {
+					img.src = evt.target.result;
+				}
+				reader.readAsDataURL(file.files[0]);
+			} else //å¼å®¹IE
+			{
+				var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+				file.select();
+				var src = document.selection.createRange().text;
+				div.innerHTML = '<img id=imghead>';
+				var img = document.getElementById('imghead');
+				img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+				var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT,
+						img.offsetWidth, img.offsetHeight);
+				status = ('rect:' + rect.top + ',' + rect.left + ','
+						+ rect.width + ',' + rect.height);
+				div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+			}
+		}
+		function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+			var param = {
+				top : 0,
+				left : 0,
+				width : width,
+				height : height
+			};
+			if (width > maxWidth || height > maxHeight) {
+				rateWidth = width / maxWidth;
+				rateHeight = height / maxHeight;
+
+				if (rateWidth > rateHeight) {
+					param.width = maxWidth;
+					param.height = Math.round(height / rateWidth);
+				} else {
+					param.width = Math.round(width / rateHeight);
+					param.height = maxHeight;
+				}
+			}
+
+			param.left = Math.round((maxWidth - param.width) / 2);
+			param.top = Math.round((maxHeight - param.height) / 2);
+			return param;
+		}
+
 		+function($) {
 			$(function() {
 				// class
@@ -626,6 +838,18 @@
 								$(document).trigger('updateNav');
 							}, 300);
 						});
+
+				//æ ç­¾é¡µ
+				$('#myTab a').click(function(e) {
+					e.preventDefault();
+					$(this).tab('show');
+				})
+
+				$('a[data-toggle="tab"]').on('shown', function(e) {
+					e.target // activated tab
+					e.relatedTarget // previous tab
+				})
+
 			});
 		}(jQuery);
 	</script>

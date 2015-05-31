@@ -78,7 +78,7 @@ public class UserDaoImpl implements IUserDao {
 				user.setEmail(resultSet.getString(3));
 				user.setPassword(resultSet.getString(4));
 				user.setName(resultSet.getString(5));
-				user.setLevel(resultSet.getInt(6));
+				user.setLevel(resultSet.getString(6));
 				user.setDistrict(resultSet.getString(7));
 				user.setScore(resultSet.getInt(8));
 				user.setSchool(resultSet.getString(9));
@@ -124,7 +124,7 @@ public class UserDaoImpl implements IUserDao {
 				user.setEmail(resultSet.getString(3));
 				user.setPassword(resultSet.getString(4));
 				user.setName(resultSet.getString(5));
-				user.setLevel(resultSet.getInt(6));
+				user.setLevel(resultSet.getString(6));
 				user.setDistrict(resultSet.getString(7));
 				user.setScore(resultSet.getInt(8));
 				user.setSchool(resultSet.getString(9));
@@ -191,7 +191,7 @@ public class UserDaoImpl implements IUserDao {
 				user.setEmail(resultSet.getString(3));
 				user.setPassword(resultSet.getString(4));
 				user.setName(resultSet.getString(5));
-				user.setLevel(resultSet.getInt(6));
+				user.setLevel(resultSet.getString(6));
 				user.setDistrict(resultSet.getString(7));
 				user.setScore(resultSet.getInt(8));
 				user.setSchool(resultSet.getString(9));
@@ -262,7 +262,7 @@ public class UserDaoImpl implements IUserDao {
 				user.setEmail(resultSet.getString(3));
 				user.setPassword(resultSet.getString(4));
 				user.setName(resultSet.getString(5));
-				user.setLevel(resultSet.getInt(6));
+				user.setLevel(resultSet.getString(6));
 				user.setDistrict(resultSet.getString(7));
 				user.setScore(resultSet.getInt(8));
 				user.setSchool(resultSet.getString(9));

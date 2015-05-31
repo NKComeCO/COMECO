@@ -52,4 +52,15 @@
 		<url-pattern>/GetTopUsersServlet</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<description></description>
+		<display-name>GetMyMesg</display-name>
+		<servlet-name>GetMyMesg</servlet-name>
+		<servlet-class>org.gr.comeco.servlet.GetMyMesg</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetMyMesg</servlet-name>
+		<url-pattern>/GetMyMesg</url-pattern>
+	</servlet-mapping>
+
 </web-app>

@@ -6,7 +6,7 @@ public class User {
 	private String email;
 	private String password;
 	private String name;
-	private int level;
+	private String level;
 	private String district;
 	private int score;
 	private String school;
@@ -49,10 +49,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 	public String getDistrict() {

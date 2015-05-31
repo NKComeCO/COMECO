@@ -1,7 +1,6 @@
 package org.gr.comeco.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,21 +10,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.gr.comece.vo.TRecruit;
-import org.gr.comeco.biz.impl.RecruitBizImpl;
-import org.gr.comeco.po.Recruit;
+import org.gr.comeco.biz.ITeamBiz;
+import org.gr.comeco.biz.IUserBiz;
+import org.gr.comeco.biz.impl.TeamBizImpl;
+import org.gr.comeco.biz.impl.UserBizImpl;
+import org.gr.comeco.po.Advantage;
+import org.gr.comeco.po.Team;
+import org.gr.comeco.po.User;
 
 
 /**
  * Servlet implementation class LoginServlet
  */
-public class GetNewRecruitServlet extends HttpServlet {
+public class GetMyMesg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetNewRecruitServlet() {
+	public GetMyMesg() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -48,21 +51,24 @@ public class GetNewRecruitServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-				
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		User user=(User)session.getAttribute("user");
 		
+		ITeamBiz iTeamBiz=new TeamBizImpl();
+		IUserBiz iUserBiz=new UserBizImpl();
 		
-		List<TRecruit> recruitl = new RecruitBizImpl().searchNew();
+		List<Team> manageTeams = iTeamBiz.SearchByLeader(user.getId());
+		List<User> myFriends=iUserBiz.searchFriends(user.getId());
+		List<Team> myTeams=iTeamBiz.SearchByMember(user.getId());
+		List<Advantage> advantages=iUserBiz.searchAdvantage();
 		
-		List<TRecruit> printl=new ArrayList<TRecruit>();
-		if(recruitl!=null)
-			for(int i=0;i<10&&i<recruitl.size();i++)printl.add(recruitl.get(i));
-
-		request.setAttribute("GetRecruit", "OK");
-		request.setAttribute("recruitl", printl);
+		request.setAttribute("GetInfo", "OK");
+		request.setAttribute("manageTeams", manageTeams);
+		request.setAttribute("myFriends", myFriends);
+		request.setAttribute("myTeams", myTeams);
+		request.setAttribute("advantages", advantages);
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("GetTopUsersServlet");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("personaldetails.jsp");
 		dispatcher.forward(request, response);
 	}
 
