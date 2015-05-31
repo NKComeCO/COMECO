@@ -113,64 +113,82 @@
 				</div>
 				<!-- / å·¦ä¾§å¯¼èªç¼©è¿&ä¸ªäººä¿¡æ¯å¾æ  -->
 
-				<!--ä¸æèåä»¥åé¾æ¥-->
-				<ul class="nav navbar-nav hidden-sm">
-					<!--Mega-->
-					<li class="dropdown pos-stc"><a href="#"
-						data-toggle="dropdown" class="dropdown-toggle"> <span
-							class="m-t-xs m-b-xs STYLE5">æç´¢éé¡¹</span> <span
-							class="caret"></span>
-					</a>
-						<div class="dropdown-menu wrapper w-full bg-white">
-							<div class="row">
+				  <!--下拉菜单以及链接-->
+            <ul class="nav navbar-nav hidden-sm">
+						<!--Mega-->
+						  <li class="dropdown pos-stc">
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+							      <span class="m-t-xs m-b-xs STYLE5">搜索选项</span>	
+							  <span class="caret"></span>
+							</a>
+							<div class="dropdown-menu wrapper w-full bg-white">
+							  <div class="row">
 								<div class="col-sm-4">
-									<!--é¡¹ç®çéé¡¹-->
-									<div class="m-l-xs m-t-xs m-b-xs font-bold">
-										<i class="icon-docs"></i> æé¡¹ç®æç´¢
-									</div>
-									<div class="row">
+										<!--项目的选项-->
+										  <div class="m-l-xs m-t-xs m-b-xs font-bold">
+                                          <i class="icon-docs"></i>
+                                          按项目搜索
+                                          </div>
+                                          <form name="form1" method="post" action="">
+										  <div class="row">
+											<div class="col-xs-6">
+											  <ul class="list-unstyled l-h-2x">
+												
+												  <p>
+												    <label>
+												      <input type="radio" name="RadioGroup1" value="0" id="RadioGroup1_0">
+												      项目名称</label>
+												    <br>
+												    <label>
+												      <input type="radio" name="RadioGroup1" value="1" id="RadioGroup1_1">
+												      项目时间</label>
+												    <br>
+											      </p>
+											  
+                                              </ul>
+											</div>
 										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
-
-											</ul>
+										  <ul class="list-unstyled l-h-2x">
+											<label>
+												      <input type="radio" name="RadioGroup1" value="2" id="RadioGroup1_1">
+												      项目区域</label>
+												    <br>
+										  </ul>
 										</div>
-										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
-
-											</ul>
-										</div>
-									</div>
+								  </div>
 								</div>
-								<!--/é¡¹ç®çéé¡¹-->
-
-								<!--æåçéé¡¹-->
-								<div class="col-sm-4 b-l b-light">
+                                  </form>
+									<!--/项目的选项-->
+									
+									<!--成员的选项-->
+									<div class="col-sm-4 b-l b-light">
 									<div class="m-l-xs m-t-xs m-b-xs font-bold">
-										<i class="icon-graduation"></i> ææåæç´¢
-									</div>
+                                    <i class="icon-graduation"></i>
+                                    按成员搜索
+                                    </div>
 									<div class="row">
-										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
-
-											</ul>
-										</div>
-										<div class="col-xs-6">
-											<ul class="list-unstyled l-h-2x">
-
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!--æåçéé¡¹-->
-								<!--Analysisçéé¡¹-->
+									<div class="col-xs-6">
+									<ul class="list-unstyled l-h-2x">
+								
+									</ul>
+									 </div>
+									 <div class="col-xs-6">
+									  <ul class="list-unstyled l-h-2x">
+									  
+									  </ul>
+									  </div>
+									  </div>
+							    </div>
+									<!--成员的选项-->
+								
 								<div class="col-sm-4 b-l b-light">
-									<div class="m-l-xs m-t-xs m-b-sm font-bold">
-										<i class="icon-eyeglasses"></i> ææèæç´¢
-									</div>
-									<div class="text-center">
-										<div class="inline">
-											<div ui-jq="easyPieChart"
-												ui-options="{
+								  <div class="m-l-xs m-t-xs m-b-sm font-bold">
+                                  <i class="icon-eyeglasses"></i>
+                                  按招聘搜索
+                                  </div>
+								  <div class="text-center">
+									<div class="inline">
+									<div ui-jq="easyPieChart" ui-options="{
 										  percent: 65,
 										  lineWidth: 50,
 										  trackColor: '{{app.color.light}}',
@@ -181,16 +199,17 @@
 										  lineCap: 'butt',
 										  animate: 2000
 										}">
-											</div>
-										</div>
 									</div>
+									</div>
+								  </div>
 								</div>
-								<!--/Analysisçéé¡¹-->
+								<!--/Analysis的选项-->
+							  </div>	  
 							</div>
-						</div></li>
-					<!--/æç´¢éé¡¹-->
-				</ul>
-				<!--ä¸æèåä»¥åé¾æ¥-->
+						  </li>
+						  <!--/Mega-->
+            </ul>
+            <!--下拉菜单以及链接-->
 
 				<!-- æç´¢æ¡-->
 				<form class="navbar-form navbar-form-sm navbar-left shift"
@@ -217,25 +236,26 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<!--ä¸ªäººä¿¡æ¯åè¡¨-->
-					<li class="dropdown"><a href="#" data-toggle="dropdown"
+					<li class="dropdown">
+                    <a href="#" data-toggle="dropdown"
 						class="dropdown-toggle clear" data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
 								class="on md b-white bottom"></i>
-						</span> <span class="hidden-sm hidden-md">John.Smith</span> <b
-							class="caret"></b>
+						</span> <span class="hidden-sm hidden-md">${sessionScope.user.name}</span>
+							<b class="caret"></b>
 					</a> <!-- ä¸æä¸ªäººä¿¡æ¯-->
 						<ul class="dropdown-menu animated fadeInRight w">
-							<li><a href="personaldetails.html"> <i
-									class="icon-user icon text-success-lter"></i> <span>ä¸ªäººä¿¡æ¯</span>
+							<li><a href> <i class="icon-user icon text-success-lter"></i>
+									<span>个人信息¯</span>
 							</a></li>
-							<li><a href="mygroups.html"> <i
-									class="glyphicon icon-bubbles text-success"></i> <span>æçå°ç»</span>
+							<li><a href=""> <i
+									class="glyphicon icon-bubbles text-success"></i> <span>我的小组</span>
 							</a></li>
 
 							<li class="divider"></li>
-							<li><a href=""> <i
-									class="glyphicon glyphicon-log-out text-success"></i> <span>éåºç»å½</span>
+							<li><a href="signuplogin.html"> <i
+									class="glyphicon glyphicon-log-out text-success"></i> <span>退出登录</span>
 							</a></li>
 						</ul> <!-- / ä¸æä¸ªäººä¿¡æ¯ --></li>
 					<!--ä¸ªäººæ¶æ¯åè¡¨-->
@@ -246,17 +266,18 @@
 		</div>
 		<!-- / å¯¼èªæ -->
 
-		<!-- å·¦ä¾§èåæ -->
+
+	<!-- 左侧菜单栏-->
 		<div class="app-aside hidden-xs bg-dark">
 			<div class="aside-wrap">
 				<div class="navi-wrap">
-					<!-- å·¦ä¾§ é¡¹ç®ç±»å« -->
+					<!-- 左侧 项目类别 -->
 					<nav ui-nav class="navi">
 						<ul class="nav">
-							<!--é¡¹ç®ç±»å«-->
+							<!--项目类别-->
 
 							<i class="glyphicon glyphicon-list well-lg text-success-dk"></i>
-							<span class=" hidden-folded padder m-t-xs m-b-xs STYLE8">é¡¹ç®åç±»</span>
+							<span class=" hidden-folded padder m-t-xs m-b-xs STYLE8">项目分类</span>
 							<nav ui-nav class="navi">
 								<ul class="nav">
 									<ul class="list-group">
@@ -265,13 +286,13 @@
 												class="pull-right text-muted"> <i
 													class="fa fa-fw fa-angle-right text"></i> <i
 													class="fa fa-fw fa-angle-down text-active"></i>
-											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">çµå­ç±»</span>
+											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">电子类</span>
 										</a>
 											<ul class="nav nav-sub dk">
 												<li class="nav-sub-header"><a href> <span
-														translate="aside.nav.DASHBOARD">çµå­ç±»</span>
+														translate="aside.nav.DASHBOARD">电子类</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦ççµå­è®¾è®¡ç«èµ</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生电子设计竞赛</span>
 												</a></li>
 											</ul></li>
 
@@ -279,17 +300,17 @@
 												class="pull-right text-muted"> <i
 													class="fa fa-fw fa-angle-right text"></i> <i
 													class="fa fa-fw fa-angle-down text-active"></i>
-											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">æ°å­¦ç±»</span>
+											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">数学类</span>
 										</a>
 											<ul class="nav nav-sub dk">
 												<li class="nav-sub-header"><a href> <span
-														translate="aside.nav.DASHBOARD">æ°å­¦ç±»</span>
+														translate="aside.nav.DASHBOARD">数学类</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦çæ°å­¦å»ºæ¨¡ç«èµï¼æ¬ç§ï¼</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生数学建模竞赛（本科）</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½ç ç©¶çæ°å­¦å»ºæ¨¡ç«èµï¼ç ç©¶çï¼</span>
+												<li ui-sref-active="active"><a href> <span>全国研究生数学建模竞赛（研究生）</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>ç¾å½å¤§å­¦çæ°å­¦å»ºæ¨¡ç«èµï¼å½éèµï¼</span>
+												<li ui-sref-active="active"><a href> <span>美国大学生数学建模竞赛（国际赛）</span>
 												</a></li>
 
 											</ul>
@@ -297,13 +318,13 @@
 												class="pull-right text-muted"> <i
 													class="fa fa-fw fa-angle-right text"></i> <i
 													class="fa fa-fw fa-angle-down text-active"></i>
-											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">ç¯å¢ç±»</span>
+											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">环境类</span>
 										</a>
 											<ul class="nav nav-sub dk">
 												<li class="nav-sub-header"><a href> <span
-														translate="aside.nav.DASHBOARD">ç¯å¢ç±»</span>
+														translate="aside.nav.DASHBOARD">环境类</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦çèè½åæç¤¾ä¼å®è·µä¸ç§æç«èµ</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生节能减排社会实践与科技竞赛</span>
 												</a></li>
 											</ul></li>
 
@@ -312,36 +333,36 @@
 												class="pull-right text-muted"> <i
 													class="fa fa-fw fa-angle-right text"></i> <i
 													class="fa fa-fw fa-angle-down text-active"></i>
-											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">åä¸ç±»</span>
+											</span> <span class="font-bold" translate="aside.nav.DASHBOARD">创业类</span>
 										</a>
 											<ul class="nav nav-sub dk">
 												<li class="nav-sub-header"><a href> <span
-														translate="aside.nav.DASHBOARD">åä¸ç±»</span>
+														translate="aside.nav.DASHBOARD">创业类</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦çâæææ¯âåä¸å¤§èµ</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生“挑战杯”创业大赛</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦ççµå­åå¡ç«èµ</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生电子商务竞赛</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦çè¥éå¤§èµ</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生营销大赛</span>
 												</a></li>
-												<li ui-sref-active="active"><a href> <span>å¨å½å¤§å­¦çERPæ²çæ¯èµ</span>
+												<li ui-sref-active="active"><a href> <span>全国大学生ERP沙盘比赛</span>
 												</a></li>
 											</ul></li>
 										<li ui-sref-active="active"><a href> <span
-												class="font-bold" translate="aside.nav.CALENDAR">å¶ä»ç±»</span>
+												class="font-bold" translate="aside.nav.CALENDAR">其他类</span>
 										</a></li>
 									</ul>
 								</ul>
 
-								<!--é¡¹ç®ç±»å«-->
+								<!--项目类别-->
 							</nav>
-							<!-- / å·¦ä¾§ é¡¹ç®ç±»å« -->
+							<!-- / 左侧 项目类别 -->
 				</div>
 			</div>
 		</div>
-		<!-- / å·¦ä¾§èåæ  -->
+		<!-- / 左侧菜单栏 -->
 
-		<!-- å³ä¾§ç½è²é¨ååå®¹ -->
+	<!-- å³ä¾§ç½è²é¨ååå®¹ -->
 		<div class="app-content">
 			<div ui-butterbar></div>
 			<a href class="off-screen-toggle hide" data-toggle="class:off-screen"
@@ -361,15 +382,16 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black">John.Smith</span> <small
-													class="m-l">å¤©æ´¥ï¼åå¼</small>
+												<span class="h3 text-black">${sessionScope.user.name}</span>
+												<small class="m-l">${sessionScope.user.district}</small>
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">100</span> <i
+												class="h3 block font-bold">${sessionScope.user.score}</span>
+												<i
 												class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
 											</a> <a href class="m-b-md inline m"> </a>
 										</div>
@@ -377,10 +399,11 @@
 								</div>
 							</div>
 						</div>
+                                           
 						<div class="wrapper bg-white b-b">
 							<ul class="nav nav-pills nav-sm">
 								<i class="glyphicon icon-action-redo text-success-dk"></i>
-								<span class="m-l-xs m-t-xs m-b-xs font-bold STYLE7">æç´¢ç»æ</span>
+								<span class="m-l-xs m-t-xs m-b-xs font-bold STYLE7">搜索结果</span>
 
 							</ul>
 						</div>
@@ -392,100 +415,23 @@
 								<ul class="nav nav-pills nav-sm">
 
 									<!--exmp1--->
-									<li>
-										<div class="panel b-light clearfix">
-											<div class="panel-body">
-												<a href="" class="thumb pull-left m-r"> <img
-													src="img/slide1.jpg" class="img-circle">
-												</a>
-												<div class="clear">
-													<a href class="text-info">@éä¼åç§° <i
-														class="fa fa-twitter"></i></a> <small class="block text-muted">éé¿åå­</small>
-													<small class="block text-muted">éä¼ç±»å</small> <small
-														class="block text-muted">æåäººæ°</small> <a href
-														class="btn btn-xs btn-success m-t-xs">ç¹å»æ¥ç</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!--/exmp1--->
-
-									<!--exmp2--->
-									<li>
-										<div class="panel b-light clearfix">
-											<div class="panel-body">
-												<a href="" class="thumb pull-left m-r"> <img
-													src="img/slide1.jpg" class="img-circle">
-												</a>
-												<div class="clear">
-													<a href class="text-info">@éä¼åç§° <i
-														class="fa fa-twitter"></i></a> <small class="block text-muted">éé¿åå­</small>
-													<small class="block text-muted">éä¼ç±»å</small> <small
-														class="block text-muted">æåäººæ°</small> <a href
-														class="btn btn-xs btn-success m-t-xs">ç¹å»æ¥ç</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!--/exmp2--->
-
-									<!--exmp3--->
-									<li>
-										<div class="panel b-light clearfix">
-											<div class="panel-body">
-												<a href="" class="thumb pull-left m-r"> <img
-													src="img/slide1.jpg" class="img-circle">
-												</a>
-												<div class="clear">
-													<a href class="text-info">@éä¼åç§° <i
-														class="fa fa-twitter"></i></a> <small class="block text-muted">éé¿åå­</small>
-													<small class="block text-muted">éä¼ç±»å</small> <small
-														class="block text-muted">æåäººæ°</small> <a href
-														class="btn btn-xs btn-success m-t-xs">ç¹å»æ¥ç</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!--/exmp3--->
-
-									<!--exmp4--->
-									<li>
-										<div class="panel b-light clearfix">
-											<div class="panel-body">
-												<a href="" class="thumb pull-left m-r"> <img
-													src="img/slide1.jpg" class="img-circle">
-												</a>
-												<div class="clear">
-													<a href class="text-info">@éä¼åç§° <i
-														class="fa fa-twitter"></i></a> <small class="block text-muted">éé¿åå­</small>
-													<small class="block text-muted">éä¼ç±»å</small> <small
-														class="block text-muted">æåäººæ°</small> <a href
-														class="btn btn-xs btn-success m-t-xs">ç¹å»æ¥ç</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!--/exmp4--->
-
-									<!--exmp5--->
-									<li>
-										<div class="panel b-light clearfix">
-											<div class="panel-body">
-												<a href="" class="thumb pull-left m-r"> <img
-													src="img/slide1.jpg" class="img-circle">
-												</a>
-												<div class="clear">
-													<a href class="text-info">@éä¼åç§° <i
-														class="fa fa-twitter"></i></a> <small class="block text-muted">éé¿åå­</small>
-													<small class="block text-muted">éä¼ç±»å</small> <small
-														class="block text-muted">æåäººæ°</small> <a href
-														class="btn btn-xs btn-success m-t-xs">ç¹å»æ¥ç</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!--/exmp5--->
-
+									  <li>
+                   <div class="panel b-light clearfix">
+                  <div class="panel-body">
+                    <a href=”“ class="thumb pull-left m-r">
+                      <img src="img/slide1.jpg" class="img-circle">
+                      </a>
+                    <div class="clear">
+                      <a href class="text-info">@队名 <i class="fa fa-twitter"></i></a>
+                      <small class="block text-muted">队长名字</small>
+                      <small class="block text-muted">小组类型</small>
+                      <small class="block text-muted">小组人数</small>
+                      <a href="personaldetails.html" class="btn btn-xs btn-success m-t-xs">修改信息</a>
+                    </div>
+                  </div>
+                </div>
+                 </li>
+                                   <!--/exmp1--->
 								</ul>
 							</ul>
 						</ul>

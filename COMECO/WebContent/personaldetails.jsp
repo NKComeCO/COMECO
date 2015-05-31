@@ -251,7 +251,8 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<!--ä¸ªäººä¿¡æ¯åè¡¨-->
-					<li class="dropdown"><a href="#" data-toggle="dropdown"
+					<li class="dropdown">
+                    <a href="#" data-toggle="dropdown"
 						class="dropdown-toggle clear" data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i

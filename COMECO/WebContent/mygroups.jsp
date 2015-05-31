@@ -176,7 +176,7 @@
 									  </div>
 							    </div>
 									<!--成员的选项-->
-									<!--Analysis的选项-->
+								
 								<div class="col-sm-4 b-l b-light">
 								  <div class="m-l-xs m-t-xs m-b-sm font-bold">
                                   <i class="icon-eyeglasses"></i>
