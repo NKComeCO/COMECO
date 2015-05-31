@@ -620,9 +620,7 @@
 							<!--äººç©é£äºæ¦-->
 
 							<!--å¹³å°èµè®¯-->
-                            
 							<div class="panel b-a">
-                            
 
 								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
 								<span class="m-t-xs m-b-xs STYLE3">${sessionScope.user.name}的个人名片</span> <span
@@ -744,7 +742,8 @@
 									</td>
 								</tr>
 							</table>
-                         </form>
+
+
 
 							<!--å¹³å°èµè®¯-->
 						</div>
