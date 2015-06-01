@@ -51,12 +51,6 @@ public class UserBizImpl implements IUserBiz {
 	}
 
 	@Override
-	public List<Advantage> searchAdvantage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<User> searchByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
@@ -64,6 +58,24 @@ public class UserBizImpl implements IUserBiz {
 
 	@Override
 	public boolean changeInfo(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Advantage> searchAllAdvantage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Advantage> searchAdvantage(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addFriend(int id1, int id2) {
 		// TODO Auto-generated method stub
 		return false;
 	}

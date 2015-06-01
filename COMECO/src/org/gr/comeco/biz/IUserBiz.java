@@ -18,9 +18,13 @@ public interface IUserBiz {
 
 	public abstract List<User> searchFriends(final int id);
 
-	public abstract List<Advantage> searchAdvantage();
+	public abstract List<Advantage> searchAllAdvantage();
+
+	public abstract List<Advantage> searchAdvantage(int id);
 
 	public abstract List<User> searchByName(String name);
 	
 	public abstract boolean changeInfo(User user);
+	
+	public abstract boolean addFriend(int id1,int id2);
 }

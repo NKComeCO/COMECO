@@ -11,7 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.gr.comeco.biz.ITeamBiz;
+import org.gr.comeco.biz.IUserBiz;
+import org.gr.comeco.biz.impl.TeamBizImpl;
 import org.gr.comeco.biz.impl.UserBizImpl;
+import org.gr.comeco.po.Advantage;
+import org.gr.comeco.po.Team;
 import org.gr.comeco.po.User;
 
 
@@ -55,7 +60,21 @@ public class GetUsersInfoServlet extends HttpServlet {
 		
 		User user = new UserBizImpl().searchById(id);
 		
+		ITeamBiz iTeamBiz=new TeamBizImpl();
+		IUserBiz iUserBiz=new UserBizImpl();
+		
+		List<Team> manageTeams = iTeamBiz.SearchByLeader(id);
+		List<User> myFriends=iUserBiz.searchFriends(id);
+		List<Team> myTeams=iTeamBiz.SearchByMember(id);
+		List<Advantage> myAdvantages=iUserBiz.searchAdvantage(id);
+		
 		request.setAttribute("user", user);
+		
+		request.setAttribute("GetInfo", "OK");
+		request.setAttribute("manageTeams", manageTeams);
+		request.setAttribute("myFriends", myFriends);
+		request.setAttribute("myTeams", myTeams);
+		request.setAttribute("myAdvantages", myAdvantages);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("userinfo.jsp");
 		dispatcher.forward(request, response);

@@ -382,7 +382,7 @@
 								<div class="row m-t">
 									<div class="col-sm-7">
 										<a href class="thumb-lg pull-left m-r"> <img
-											src="img/a0.jpg" class="img-circle">
+											src="user_images/${sessionScope.user.image}" class="img-circle">
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
@@ -457,14 +457,14 @@
 									<ul class="list-group no-bg no-borders pull-in">
 										<c:forEach items="${requestScope.userl }" var="user">
 											<!--人物名片-->
-											<li class="list-group-item"><a herf
+											<li class="list-group-item" ><a href="/COMECO/GetUsersInfoServlet?id=${user.id }"
 												class="pull-left thumb-sm avatar m-r"> <!--头像--> <img
-													src="img/a4.jpg" alt="..." class="img-circle"> <!--/头像-->
+													src="user_images/${user.image }" alt="..." class="img-circle"> <!--/头像-->
 													<!--状态 在线--> <i class="on b-white bottom"></i> <!--/状态 在线-->
 											</a>
 												<div class="clear">
-													<div>
-														<a href>${user.name }</a> <i
+													<div >
+														<a href="/COMECO/GetUsersInfoServlet?id=${user.id }">${user.name }</a> <i
 															class="glyphicon glyphicon-heart-empty text-danger"></i>
 														<span class="">${user.score }</span>
 													</div>

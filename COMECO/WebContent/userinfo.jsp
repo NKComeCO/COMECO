@@ -23,7 +23,8 @@
 <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
 <link rel="stylesheet" href="css/font.css" type="text/css" />
 <link rel="stylesheet" href="css/app.css" type="text/css" />
- <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+	media="screen">
 <style type="text/css">
 #preview {
 	width: 130px;
@@ -37,9 +38,10 @@
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
 }
 
-#team_img{
+#team_img {
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
 }
+
 <!--
 .STYLE00 {
 	color: #7BD983;
@@ -245,8 +247,7 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<!--ä¸ªäººä¿¡æ¯åè¡¨-->
-					<li class="dropdown">
-                    <a href="#" data-toggle="dropdown"
+					<li class="dropdown"><a href="#" data-toggle="dropdown"
 						class="dropdown-toggle clear" data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
@@ -397,14 +398,14 @@
 									</div>
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
-											<a href class="m-b-md inline m"> <span
+											<a herf class="m-b-md inline m"> <span
 												class="h3 block font-bold">${requestScope.user.score}</span>
 												<i
 												class="glyphicon glyphicon-heart text-danger-dker text-2x"></i>
-											</a> <a href class="m-b-md inline m">
-                                            <span class="h3 block font-bold">添加好友</span>
-                                            <i class="glyphicon glyphicon-plus text-danger-dker text-2x"></i>
-                                             </a>
+											</a> <a href="/COMECO/AddFriendServlet?id=${requestScope.user.id}" class="m-b-md inline m"> <span
+												class="h3 block font-bold">添加好友</span> <i
+												class="glyphicon glyphicon-plus text-danger-dker text-2x"></i>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -417,10 +418,9 @@
 						<div class="padder">
 							<div class="wrapper bg-white b-b">
 								<ul class="nav nav-tabs" id="myTab">
-									<li class="active"><a href="#2">我管理的小组</a></li>
-									<li><a href="#3">我的好友</a></li>
-									<li><a href="#4">我加入的小组</a></li>
-                                    <li><a href="#5">创建小组</a></li>
+									<li class="active"><a href="#2">管理的小组</a></li>
+									<li><a href="#3">好友</a></li>
+									<li><a href="#4">加入的小组</a></li>
 
 								</ul>
 								<div class="streamline b-l b-success m-l-lg m-b padder-v">
@@ -515,84 +515,7 @@
 											</table>
 
 										</div>
-                        
-                                 <!--创建小组页面--> 
-                                              <div class="tab-pane" id="5">
-                                               <div align="center">
-                                                <form name="form2" method="post" action="">
-                                                <!---头像--->
-                                                <div id="preview">
-                                                <img id="team_img" class="img-circle" border=0 src="img/head_180.jpg" width="130" height="130"/>
-                                                </div>
-                                                <input type="file" onChange="previewImage(this)"/>
-                                                <div class="line"></div>
-                                                
-                                                <!--开始时间--->
-                                                <span class="right">选择开始时间</span>
-                                                <div class="form-group">
-  <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                                <input class="form-control" size="6" type="text" value="" name="" readonly>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>  
-                                                </div>
-                                                <input type="hidden" id="dtp_input1" value="" /><br/>
-                                                </div>
-                                                 
-                                                 <!---结束时间--->
-                                                 <span class="right">选择结束时间 </span>
-                                                 <div class="form-group">
-    <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                                <input class="form-control" size="6" type="text" value="" name="" readonly>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                                                </div>
-                                               <input type="hidden" id="dtp_input1" value="" /><br/>
-                                               </div>
-                                          
-                                          <!--队伍名称--->
-                                          <span class="right">输入队伍名称</span>
-                                          <div class="form-group">
-                                        <div class="input-group col-md-5" >
-                                        <input class="form-control" size="6" type="text" value="" name="" >
-                                        </div>
-                                        </div>
-                                         <div class="line"></div>
-                                                
-                                                
-                                                <span>选择小组类型</span>
-                                                  <div>
-                                                <select name="team_type" class="w-xl">
-                                                  <option value="0" selected>工科</option>
-                                                  <option value="1">理科</option>
-                                                  <option value="2">文科</option>
-                                                  <option value="3">其他</option>
-                                                </select>
-                                                </div>
-                                          <div class="line"></div>
-                                                
-                                               <span> 选择小组人数</span>
-                                                  <div>
-                                                <select name="max_mem" class="w-xl">
-                                                  <option value="4" selected>2</option>
-                                                  <option value="5">3</option>
-                                                  <option value="6">4</option>
-                                                  <option value="7">5</option>
-                                                  <option value="8">5个以上</option>
-                                                </select>
-                                                </div>
-                                               <div class="line"></div>
-                                               
-                                               <!--提交--->
-                                               <div>
-                                              <button type="submit" class="btn btn-md btn-default m-t-md">
-                                              <a href="personaldetails.html">提交</a>
-                                             </button>
-                                             </div>
-                                             </form>
-                                             
-                                                </div>
-                                              </div>
-                                             <!--/创建小组-->
+
 
 									</div>
 
@@ -620,72 +543,64 @@
 							<div class="panel b-a">
 
 								<i class="glyphicon glyphicon-user well-lg text-success-dker"></i>
-								<span class="m-t-xs m-b-xs STYLE3">${requestScope.user.name}的个人名片</span> <span
-									class="m-t-xs m-b-xs STYLE4"></span><br>
+								<span class="m-t-xs m-b-xs STYLE3">${requestScope.user.name}的个人名片</span>
+								<span class="m-t-xs m-b-xs STYLE4"></span><br>
 
-									<table width="250" class="table table-condensed">
-										<tr>
-											<td><span>昵称</span></td>
-											<td>${requestScope.user.name}</td>
-										</tr>
-										<tr>
-											<td><span>邮箱</span></td>
-											<td>
-                                            <i class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span>
-                                            </td>
-										</tr>
-										<tr>
-											<td><span>性别</span></td>
-											<td><label>  
-                                            <!--女-->
-                                            <i class="icon icon-symbol-female text-danger"></i>
-                                             <!--/女-->
-                                            </label> 
-                                            <!---男--->
-                                            <label>
-											 <i class="icon icon-symbol-male text-info"></i>
-											</label>
-                                            <!---/男--->
-                                            </td>
-										</tr>
-										<tr>
-											<td><span>特长</span></td>
-											<td><c:forEach items="${requestScope.advantages }"
-													var="advantage">
-													<label> <br>
-													${advantage.name} </br>
-													</label>
-												</c:forEach>
-											</td>
-										</tr>
-										<tr>
-											<td><span>地区</span></td>
-											<td>${requestScope.user.district}</td>
-										</tr>
-										<tr>
-											<td><span>学校</span></td>
-											<td>${requestScope.user.school}</td>
-										</tr>
-										<tr>
-											<td><span>专业</span></td>
-											<td>${requestScope.user.major}</td>
-										</tr>
-										<tr>
-											<td><span>水平</span></td>
-											<td>${requestScope.user.level}</td>
-										</tr>
-										<tr>
-											<td><span>点赞</span></td>
-											<td><i class="glyphicon glyphicon-heart text-danger"></i><span>${sessionScope.user.score}</span></td>
-										</tr>
-										<tr>
-											<td><span>介绍</span></td>
-											<td>${requestScope.user.introduce }</td>
-										</tr>
-										<tr>
+								<table width="250" class="table table-condensed">
+									<tr>
+										<td><span>昵称</span></td>
+										<td>${requestScope.user.name}</td>
+									</tr>
+									<tr>
+										<td><span>邮箱</span></td>
+										<td><i
+											class="glyphicon glyphicon-envelope text-success-dk"></i><span>${sessionScope.user.email}</span>
+										</td>
+									</tr>
+									<tr>
+										<td><span>性别</span></td>
+										<td><label> <!--女--> <i
+												class="icon icon-symbol-female text-danger"></i> <!--/女-->
+										</label> <!---男---> <label> <i
+												class="icon icon-symbol-male text-info"></i>
+										</label> <!---/男---></td>
+									</tr>
+									<tr>
+										<td><span>特长</span></td>
+										<td><c:forEach items="${requestScope.advantages }"
+												var="advantage">
+												<label> <br> ${advantage.name} </br>
+												</label>
+											</c:forEach></td>
+									</tr>
+									<tr>
+										<td><span>地区</span></td>
+										<td>${requestScope.user.district}</td>
+									</tr>
+									<tr>
+										<td><span>学校</span></td>
+										<td>${requestScope.user.school}</td>
+									</tr>
+									<tr>
+										<td><span>专业</span></td>
+										<td>${requestScope.user.major}</td>
+									</tr>
+									<tr>
+										<td><span>水平</span></td>
+										<td>${requestScope.user.level}</td>
+									</tr>
+									<tr>
+										<td><span>点赞</span></td>
+										<td><i class="glyphicon glyphicon-heart text-danger"></i><span>${sessionScope.user.score}</span></td>
+									</tr>
+									<tr>
+										<td><span>介绍</span></td>
+										<td>${requestScope.user.introduce }</td>
+									</tr>
+									<tr>
 
-										</tr>
-									</table>
+									</tr>
+								</table>
 							</div>
 							<!--å¹³å°èµè®¯-->
 						</div>
@@ -707,8 +622,10 @@
 	<!-- jQuery -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/jquery/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.js"
+		charset="UTF-8"></script>
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js"
+		charset="UTF-8"></script>
 	<script type="text/javascript">
 			   $('.form_datetime').datetimepicker({
 				//language:  'fr',
