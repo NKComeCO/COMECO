@@ -3,18 +3,22 @@ package org.gr.comeco.biz.impl;
 import java.util.List;
 
 import org.gr.comeco.biz.IUserBiz;
+import org.gr.comeco.dao.IAdvantageDao;
 import org.gr.comeco.dao.IUserDao;
+import org.gr.comeco.dao.impl.AdvantageDaoImpl;
 import org.gr.comeco.dao.impl.UserDaoImpl;
 import org.gr.comeco.po.Advantage;
 import org.gr.comeco.po.User;
 
 public class UserBizImpl implements IUserBiz {
 	private IUserDao userDao;
+	private IAdvantageDao advantageDao;
 
 	public UserBizImpl() {
 		super();
 		// TODO Auto-generated constructor stub
 		this.userDao=new UserDaoImpl();
+		this.advantageDao=new AdvantageDaoImpl();
 		
 		
 		//System.out.println(userDao.selsectByEmail("dgzxczh@163.com"));
@@ -65,7 +69,7 @@ public class UserBizImpl implements IUserBiz {
 	@Override
 	public List<Advantage> searchAllAdvantage() {
 		// TODO Auto-generated method stub
-		return null;
+		return advantageDao.selectAll();
 	}
 
 	@Override

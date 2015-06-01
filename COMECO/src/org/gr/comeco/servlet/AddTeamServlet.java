@@ -2,6 +2,7 @@ package org.gr.comeco.servlet;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,20 +17,23 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.gr.comeco.biz.ITeamBiz;
 import org.gr.comeco.biz.IUserBiz;
+import org.gr.comeco.biz.impl.TeamBizImpl;
 import org.gr.comeco.biz.impl.UserBizImpl;
+import org.gr.comeco.po.Team;
 import org.gr.comeco.po.User;
 
 /**
  * Servlet implementation class UpdateInfServlet
  */
-public class UpdateUserInfoServlet extends HttpServlet {
+public class AddTeamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UpdateUserInfoServlet() {
+	public AddTeamServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -48,16 +52,19 @@ public class UpdateUserInfoServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		IUserBiz userBiz = new UserBizImpl();
+		Team team = new Team();
+		team.setLeader_id(user.getId());
+		ITeamBiz teamBiz = new TeamBizImpl();
 
 		String fileUploadPath = this.getServletContext().getRealPath(
-				"/user_images");
+				"/team_images");
 		System.out.println("[SingleFileUploadServlet] 设置服务器接受客户端上传文件的位置是："
 				+ fileUploadPath);
 		File fileUploadPathD = new File("/user_images");
@@ -101,75 +108,47 @@ public class UpdateUserInfoServlet extends HttpServlet {
 						// 获取客户端表单输入元素的name属性的值
 						String name = fileItem.getFieldName().trim();
 						// 判断数据为哪个字段数据
-						if ("nickName".equalsIgnoreCase(name)) {
+						if ("name".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setName(value);
+							team.setName(value);
 						}
-						if ("gender".equalsIgnoreCase(name)) {
+						if ("max_mem".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setGender(Integer.parseInt(value));
+							team.setMax_mem(Integer.parseInt(value));
 						}
-						if ("major".equalsIgnoreCase(name)) {
+						if ("start_time".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setMajor(value);
+							team.setStart_time(new Date(Date.parse(value)));
 						}
-						if ("district".equalsIgnoreCase(name)) {
+						if ("end_time".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setDistrict(value);
-						}
-						if ("school".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setSchool(value);;
-						}
-						if ("intro".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setIntroduce(value);;
-						}
-						if ("level".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setLevel(value);
-						}
-						if ("password".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setPassword(value);
+							team.setEnd_time(new Date(Date.parse(value)));
 						}
 					} else {
 						// 4-3:获取上传文件的名称
 						String fileName = fileItem.getName().trim();
 						if (fileName.equals("")) {
 							// 扩展1：唯一命名
-							user.setImage("default.jpg");
+							team.setImage("default.jpg");
 						    System.out.println("[SingleFileUploadServlet] 获取上传文件的名称为: "
 										+ fileName);
 						}
 						else{
 							String fileExtName = fileName.substring(fileName.lastIndexOf("."));
 							fileName = generateUnqieName() + fileExtName;
-							user.setImage(fileName);
+							team.setImage(fileName);
 						    System.out.println("[SingleFileUploadServlet] 获取上传文件的名称为: "
 										+ fileName);
 							// 4-4:封装上传文件对象并写入到服务器
@@ -191,7 +170,7 @@ public class UpdateUserInfoServlet extends HttpServlet {
 			System.out.println("客户端表单不符合上传要求！");
 		}
 		System.out.println(user);
-		boolean flag = userBiz.changeInfo(user);
+		boolean flag = teamBiz.addTeam(team);
 		String url = "";
 		if (flag) {
 			url = "1";

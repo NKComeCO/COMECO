@@ -51,7 +51,7 @@ public class GetTeamInfoServlet extends HttpServlet {
 
 		int id = Integer.parseInt(new String(request.getParameter("id").getBytes("iso8859-1"), "UTF-8"));
 		
-		Team team = new TeamBizImpl().SearchById(id);
+		Team team = new TeamBizImpl().searchById(id);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("team", team);

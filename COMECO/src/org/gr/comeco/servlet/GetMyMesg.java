@@ -57,9 +57,9 @@ public class GetMyMesg extends HttpServlet {
 		ITeamBiz iTeamBiz=new TeamBizImpl();
 		IUserBiz iUserBiz=new UserBizImpl();
 		
-		List<Team> manageTeams = iTeamBiz.SearchByLeader(user.getId());
+		List<Team> manageTeams = iTeamBiz.searchByLeader(user.getId());
 		List<User> myFriends=iUserBiz.searchFriends(user.getId());
-		List<Team> myTeams=iTeamBiz.SearchByMember(user.getId());
+		List<Team> myTeams=iTeamBiz.searchByMember(user.getId());
 		List<Advantage> myAdvantages=iUserBiz.searchAdvantage(user.getId());
 		List<Advantage> advantages=iUserBiz.searchAllAdvantage();
 		

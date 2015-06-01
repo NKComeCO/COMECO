@@ -3,10 +3,8 @@ package org.gr.comeco.po;
 public class Advantage {
 	private int id;
 	private String name;
-	public Advantage(int id, String name) {
+	public Advantage() {
 		super();
-		this.id = id;
-		this.name = name;
 	}
 	
 	public int getId() {

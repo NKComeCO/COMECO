@@ -5,11 +5,13 @@ import java.util.List;
 import org.gr.comeco.po.Team;
 
 public interface ITeamBiz {
-	public abstract Team SearchById(int id);
+	public abstract boolean addTeam(Team team);
 
-	public abstract List<Team> SearchByName(String name);
+	public abstract Team searchById(int id);
 
-	public abstract List<Team> SearchByLeader(int id);
+	public abstract List<Team> searchByName(String name);
 
-	public abstract List<Team> SearchByMember(int id);
+	public abstract List<Team> searchByLeader(int id);
+
+	public abstract List<Team> searchByMember(int id);
 }

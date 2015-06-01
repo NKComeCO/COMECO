@@ -11,16 +11,8 @@ public class Team {
 	private Date start_time,end_time;
 	
 	
-	public Team(int id, String name, int max_mem, int leader_id, String image,
-			Date start_time, Date end_time) {
+	public Team() {
 		super();
-		this.id = id;
-		this.name = name;
-		this.max_mem = max_mem;
-		this.leader_id = leader_id;
-		this.image = image;
-		this.start_time = start_time;
-		this.end_time = end_time;
 	}
 	public int getId() {
 		return id;

@@ -55,7 +55,7 @@ public class AddFriendServlet extends HttpServlet {
 		
 		new UserBizImpl().addFriend(user.getId(), id);
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("/COMECO/GetUsersInfoServlet?id="+id);
+		RequestDispatcher dispatcher=request.getRequestDispatcher("GetUsersInfoServlet?id="+id);
 		dispatcher.forward(request, response);
 	}
 

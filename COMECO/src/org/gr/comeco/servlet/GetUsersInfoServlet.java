@@ -1,7 +1,6 @@
 package org.gr.comeco.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -9,8 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.gr.comeco.biz.ITeamBiz;
 import org.gr.comeco.biz.IUserBiz;
 import org.gr.comeco.biz.impl.TeamBizImpl;
@@ -63,9 +60,9 @@ public class GetUsersInfoServlet extends HttpServlet {
 		ITeamBiz iTeamBiz=new TeamBizImpl();
 		IUserBiz iUserBiz=new UserBizImpl();
 		
-		List<Team> manageTeams = iTeamBiz.SearchByLeader(id);
+		List<Team> manageTeams = iTeamBiz.searchByLeader(id);
 		List<User> myFriends=iUserBiz.searchFriends(id);
-		List<Team> myTeams=iTeamBiz.SearchByMember(id);
+		List<Team> myTeams=iTeamBiz.searchByMember(id);
 		List<Advantage> myAdvantages=iUserBiz.searchAdvantage(id);
 		
 		request.setAttribute("user", user);

@@ -61,7 +61,7 @@ public class GetSearchServlet extends HttpServlet {
 		
 		switch(type){
 		case 0:
-			List<Team> teaml = new TeamBizImpl().SearchByName(name);
+			List<Team> teaml = new TeamBizImpl().searchByName(name);
 
 			request.setAttribute("isTeam", "OK");
 			request.setAttribute("teaml", teaml);
