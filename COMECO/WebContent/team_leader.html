@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
       <meta charset="utf-8" />
-      <title>Team</title>
-    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit,      AngularJS, ui route, charts, widgets, components" />
+      <title>Team Details</title>
+      <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit,      AngularJS, ui route, charts, widgets, components" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
       <link rel="stylesheet" href="css/animate.css" type="text/css" />
@@ -11,6 +11,7 @@
       <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
       <link rel="stylesheet" href="css/font.css" type="text/css" />
       <link rel="stylesheet" href="css/app.css" type="text/css" />
+      <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 		 <style type="text/css">
 		 #preview{width:130px; height:130px;  border-radius:350px; border:0px; solid #000;overflow:hidden;}
          #img {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
@@ -423,7 +424,8 @@
                          <div class="col-sm-5">
                           <div class="pull-right pull-none-xs text-center">
                             <a href class="m-b-md inline m">
-           
+            <i class="glyphicon glyphicon-remove-circle text-success-dk text-2x"></i>
+                              <span class="h4 block">删除小组</span>
                             </a>
                             
                              <a href class="m-b-md inline m">                     
@@ -439,7 +441,9 @@
 		          <div class="wrapper bg-white b-b">
 				  <ul class="nav nav-tabs" id="myTab">
 					  <li class="active"><a href="#1">小组信息</a></li>
+					  <li><a href="#2">小组文件</a></li>
 					  <li><a href="#3">小组动态</a></li>
+                      <li><a href="#4">修改信息</a></li>
 					</ul>
 					 
 					<div class="tab-content">
@@ -456,7 +460,51 @@
                     <li class="list-group-item">                     
                         <h4>小组人数上限：xx人</4>
                     </li>
-                  </ul>   
+                  </ul>
+                      
+                      </div>
+                      
+                      <!---小组文件--->
+					  <div class="tab-pane" id="2">
+                      <div class="streamline b-l b-success m-l-lg m-b padder-v">
+                      <table class="table table-hover table-condensed">
+												<thead>
+													<tr>
+														<th>文件名</th>
+														<th>创建人</th>
+														<th>下载</th>
+													</tr>
+												</thead>
+                                                <!--exmp1--->
+													<tbody>
+														<tr>
+															<td><i class="icon icon-folder-alt text-success-dker text-2x"></i>
+                                                            <small>数据库里好像没有文件名这个属性</small>
+                                                            </td>
+															<td>
+                                                            <small>创建人的名字好像也没有</small>
+                                                            </td>
+															<td><a href="">
+                                                            <i class="glyphicon glyphicon-circle-arrow-down text-success-dker text-2x">
+                                                            </i>
+                                                            </a>
+                                                            </td>
+														</tr>
+													</tbody>
+                                               <!--exmp2--->
+													<tbody>
+														<tr>
+															<td><i class="icon icon-folder-alt text-success-dker text-2x"></i>
+                                                            <small>文件的下载是在前台or后台实现？</small>
+                                                            </td>
+															<td>
+                                                            <small>文件真的能下载？</small>
+                                                            </td>
+															<td><i class="glyphicon glyphicon-circle-arrow-down text-success-dker text-2x"</td>
+														</tr>
+													</tbody>
+                                                </table>
+                      </div>
                       </div>
                       
                       <!--小组动态--->
@@ -507,6 +555,79 @@
                   
                        </div>                      
                       </div>
+                      
+                      <!---修改信息--->
+                       <div class="tab-pane" id="4">
+                       <div align="center">
+                      <form name="form2" method="post" action="">
+                        <!---头像--->
+                        <div id="preview">
+                        <img id="img" class="img-circle" border=0 src="img/head_180.jpg" width="130" height="130"/>
+                        </div>
+                        <input type="file" onChange="previewImage(this)"/>
+                        <div class="line"></div>
+                        
+                        <!--开始时间--->
+                        <span class="right">选择开始时间</span>
+                        <div class="form-group">
+                        <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                        <input class="form-control" size="6" type="text" value="" name="" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>  
+                        </div>
+				        <input type="hidden" id="dtp_input1" value="" /><br/>
+                        </div>
+                         
+                         <!---结束时间--->
+                         <span class="right">选择结束时间 </span>
+                         <div class="form-group">
+                         <div class="input-group date form_datetime col-md-5" data-date=" " data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                        <input class="form-control" size="6" type="text" value="" name="" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                       <input type="hidden" id="dtp_input1" value="" /><br/>
+                       </div>
+                  
+                  <!--队伍名称--->
+                  <span class="right">输入队伍名称</span>
+                  <div class="form-group">
+                <div class="input-group col-md-5" >
+                <input class="form-control" size="6" type="text" value="" name="" >
+                </div>
+                </div>
+                 <div class="line"></div>
+	                    
+                        
+                        <span>选择小组类型</span>
+                          <div>
+                        <select name="team_type" class="w-xl">
+                          <option value="0" selected>工科</option>
+                          <option value="1">理科</option>
+                          <option value="2">文科</option>
+                          <option value="3">其他</option>
+                        </select>
+                        </div>
+                  <div class="line"></div>
+                        
+                       <span> 选择小组人数</span>
+                              <div class="form-group">
+                <div class="input-group col-md-5" >
+                <input class="form-control" size="6" type="text" value="" name="" >        
+                        </div>
+                        </div>
+                       <div class="line"></div>
+                       
+                       <!--确认修改--->
+                       <div>
+                      <button type="submit" class="btn btn-md btn-default m-t-md">
+				      <a href="">确认修改</a>
+					 </button>
+                     </div>
+                     </form>
+                      </div>
+                      </div>
+                      <!---/确认修改--->
 					</div>
 					 
 					<script>
@@ -575,6 +696,28 @@
                
                     </div>					
 					<!--/小组成员-->
+                    
+                    <!--添加小组成员--->
+                      <div class="panel b-a">
+                  <i class="icon icon-star text-success text-2x text-success-dker"></i>
+                     <span  class="m-t-xs m-b-xs STYLE3"></span>			  
+                  <span class="m-t-xs m-b-xs STYLE4">添加成员</span><br>	
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                    <form action="" method="get">
+                   <input name="user_email" type="text" size="30"
+												placeholder="输入用户邮箱">
+                    <div align="center">
+                    <button type="submit" class="btn btn-sm btn-default m-t-sm ">
+				      <a href="">确认</a>
+					 </button>
+                   </div>
+                    </form>
+                    </li>
+                  </ul>
+                  </div>
+                    <!--/添加小组成员--->
+                    
                   </div>
                 </div>
               </div>
@@ -593,7 +736,100 @@
       <!-- jQuery -->
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/jquery/bootstrap.js"></script>
+         <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
       <script type="text/javascript">
+	   $('.form_datetime').datetimepicker({
+				//language:  'fr',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+				showMeridian: 1
+			});
+			$('.form_date').datetimepicker({
+				language:  'fr',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				minView: 2,
+				forceParse: 0
+			});
+			$('.form_time').datetimepicker({
+				language:  'fr',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 1,
+				minView: 0,
+				maxView: 1,
+				forceParse: 0
+			});
+	  
+	   //图片上传预览    IE是用了滤镜。
+        function previewImage(file)
+        {
+          var MAXWIDTH  = 260; 
+          var MAXHEIGHT = 180;
+          var div = document.getElementById('preview');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+	  
+	  
+	  
         +function ($) {
           $(function(){
             // class
