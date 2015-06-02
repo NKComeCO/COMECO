@@ -19,13 +19,13 @@ import org.gr.comeco.po.User;
 /**
  * Servlet implementation class LoginServlet
  */
-public class GetTeamInfoServlet extends HttpServlet {
+public class DeleteTeamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetTeamInfoServlet() {
+	public DeleteTeamServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -54,31 +54,9 @@ public class GetTeamInfoServlet extends HttpServlet {
 
 		int id = Integer.parseInt(new String(request.getParameter("id").getBytes("iso8859-1"), "UTF-8"));
 		
-		Team team = new TeamBizImpl().searchById(id);
+		boolean flag = new TeamBizImpl().deleteTeam(id);
 		
-		
-		HttpSession session = request.getSession();
-		request.setAttribute("team", team);
-		User user=(User)session.getAttribute("user");
-		List<Type> type=new TeamBizImpl().searchType(team.getId());
-		request.setAttribute("type", type);
-		
-		String url="team.jsp";
-		
-		if(team.getLeader_id()==user.getId()){
-			url="team_leader.jsp";
-		}
-		else{
-			List<User> users=new TeamBizImpl().searchMember(team.getId());
-			for(User u:users){
-				if(u.getId()==user.getId()){
-					url="team_member.jsp";
-					break;
-				}
-			}
-		}
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher(url);
+		RequestDispatcher dispatcher=request.getRequestDispatcher("homepage.jsp");
 		dispatcher.forward(request, response);
 	}
 
