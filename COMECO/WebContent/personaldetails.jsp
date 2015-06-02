@@ -587,15 +587,11 @@
 													<div class="line"></div>
 
 													<span> 选择小组人数</span>
-													<div>
-														<select name="max_mem" class="w-xl">
-															<option value="4" selected>2</option>
-															<option value="5">3</option>
-															<option value="6">4</option>
-															<option value="7">5</option>
-															<option value="8">5个以上</option>
-														</select>
-													</div>
+													  <div class="form-group">
+                                                        <div class="input-group col-md-5" >
+                                                        <input class="form-control" size="6" type="text" value="" name="" >        
+                                                                </div>
+                                                                </div>
 													<div class="line"></div>
 
 													<!--提交--->
