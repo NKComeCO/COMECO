@@ -1,8 +1,6 @@
 package org.gr.comeco.servlet;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.gr.comeco.biz.impl.TeamBizImpl;
-import org.gr.comeco.po.Team;
-import org.gr.comeco.po.Type;
 import org.gr.comeco.po.User;
 
 

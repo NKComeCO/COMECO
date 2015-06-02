@@ -3,7 +3,6 @@ package org.gr.comeco.biz;
 import java.util.List;
 
 import org.gr.comeco.po.Advantage;
-import org.gr.comeco.po.Team;
 import org.gr.comeco.po.User;
 
 public interface IUserBiz {

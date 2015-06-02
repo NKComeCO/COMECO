@@ -53,7 +53,7 @@ public class GetNewRecruitServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		
 		
-		List<TRecruit> recruitl = new RecruitBizImpl().searchNew();
+		List<TRecruit> recruitl = new RecruitBizImpl().searchNew(10);
 		
 		List<TRecruit> printl=new ArrayList<TRecruit>();
 		if(recruitl!=null)

@@ -24,4 +24,6 @@ public interface ITeamBiz {
 	public abstract boolean deleteTeam(int id);
 
 	public abstract boolean deleteMember(int tid,int uid);
+
+	public abstract boolean changeInfo(Team team);
 }

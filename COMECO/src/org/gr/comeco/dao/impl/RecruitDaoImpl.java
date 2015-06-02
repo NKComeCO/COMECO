@@ -3,8 +3,10 @@ package org.gr.comeco.dao.impl;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.gr.comece.vo.TRecruit;
 import org.gr.comeco.dao.IRecruitDao;
 import org.gr.comeco.db.ConnectionManager;
 import org.gr.comeco.db.DBUtils;
@@ -86,9 +88,39 @@ public class RecruitDaoImpl implements IRecruitDao {
 	}
 
 	@Override
-	public List<Recruit> selectNew(int number) {
+	public List<TRecruit> selectNew(int number) {
 		// TODO Auto-generated method stub
-		return null;
+		// 步骤1：获取一个数据库连接对象
+				this.connection = connectionManager.openConnection();
+				// 步骤2：创建SQL语句模板
+				String strSQL = "select * from recruit order by id desc";
+				Object[] params = new Object[] {  };
+				// 步骤4：调用dbutils中的方法完成对数据库的查询操作
+				ResultSet resultSet = this.dbUtils
+						.execQuery(connection, strSQL, params);
+				
+				ArrayList<TRecruit> recruits= new ArrayList<TRecruit>();
+
+				try {
+					while (resultSet.next()) {
+						// 步骤6：创建一个对象
+
+						TRecruit recruit = new TRecruit();
+						recruit.setId(resultSet.getInt(1));
+						recruit.setTeamid(resultSet.getInt(2));
+						recruit.setContact(resultSet.getString(3));
+						recruit.setIntro(resultSet.getString(4));
+						// 步骤7：返回对象
+						recruits.add(recruit);
+					} 
+					return recruits;
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return null;
+				} finally {
+					this.connectionManager.closeConnection(connection);
+				}
 	}
 
 }

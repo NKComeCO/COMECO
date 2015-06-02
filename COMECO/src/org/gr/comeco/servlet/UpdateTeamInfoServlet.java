@@ -2,7 +2,7 @@ package org.gr.comeco.servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,29 +10,24 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.gr.comeco.biz.ITeamBiz;
-import org.gr.comeco.biz.IUserBiz;
 import org.gr.comeco.biz.impl.TeamBizImpl;
-import org.gr.comeco.biz.impl.UserBizImpl;
 import org.gr.comeco.po.Team;
-import org.gr.comeco.po.User;
 
 /**
  * Servlet implementation class UpdateInfServlet
  */
-public class UpdateUserInfoServlet extends HttpServlet {
+public class UpdateTeamInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UpdateUserInfoServlet() {
+	public UpdateTeamInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -112,65 +107,35 @@ public class UpdateUserInfoServlet extends HttpServlet {
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setName(value);
+							team.setName(value);
 						}
-						if ("gender".equalsIgnoreCase(name)) {
+						if ("max_mem".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setGender(Integer.parseInt(value));
+							team.setMax_mem(Integer.parseInt(value));
 						}
-						if ("major".equalsIgnoreCase(name)) {
+						if ("start_time".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setMajor(value);
+							team.setStart_time(new Date(Date.parse(value)));
 						}
-						if ("district".equalsIgnoreCase(name)) {
+						if ("end_time".equalsIgnoreCase(name)) {
 							String value = fileItem.getString();
 							value = new String(value.getBytes("iso8859-1"),
 									"UTF-8");
 							System.out.println("消息内容：> " + value);
-							user.setDistrict(value);
-						}
-						if ("school".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setSchool(value);
-							;
-						}
-						if ("intro".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setIntroduce(value);
-							;
-						}
-						if ("level".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setLevel(value);
-						}
-						if ("password".equalsIgnoreCase(name)) {
-							String value = fileItem.getString();
-							value = new String(value.getBytes("iso8859-1"),
-									"UTF-8");
-							System.out.println("消息内容：> " + value);
-							user.setPassword(value);
+							team.setEnd_time(new Date(Date.parse(value)));
 						}
 					} else {
 						// 4-3:获取上传文件的名称
 						String fileName = fileItem.getName().trim();
 						if (fileName.equals("")) {
 							// 扩展1：唯一命名
-							user.setImage("default.jpg");
+							team.setImage("default.jpg");
 							System.out
 									.println("[SingleFileUploadServlet] 获取上传文件的名称为: "
 											+ fileName);
@@ -178,7 +143,7 @@ public class UpdateUserInfoServlet extends HttpServlet {
 							String fileExtName = fileName.substring(fileName
 									.lastIndexOf("."));
 							fileName = generateUnqieName() + fileExtName;
-							user.setImage(fileName);
+							team.setImage(fileName);
 							System.out
 									.println("[SingleFileUploadServlet] 获取上传文件的名称为: "
 											+ fileName);
@@ -201,8 +166,8 @@ public class UpdateUserInfoServlet extends HttpServlet {
 		} else {
 			System.out.println("客户端表单不符合上传要求！");
 		}
-		System.out.println(user);
-		boolean flag = userBiz.changeInfo(user);
+		System.out.println(team);
+		boolean flag = teamBiz.changeInfo(team);
 		String url = "";
 		if (flag) {
 			url = "1";
@@ -211,7 +176,7 @@ public class UpdateUserInfoServlet extends HttpServlet {
 		}
 		request.setAttribute("tip", url);
 		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("personaldetails.jsp");
+				.getRequestDispatcher("GetTeamInfoServlet?id="+id);
 		dispatcher.forward(request, response);
 	}
 

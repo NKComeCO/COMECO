@@ -4,11 +4,8 @@ public class Member {
 	private int id;
 	private int teamid;
 	private int userid;
-	public Member(int id, int teamid, int userid) {
+	public Member() {
 		super();
-		this.id = id;
-		this.teamid = teamid;
-		this.userid = userid;
 	}
 	public int getId() {
 		return id;
