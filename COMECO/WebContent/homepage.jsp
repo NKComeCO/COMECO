@@ -251,7 +251,7 @@
 							<b class="caret"></b>
 					</a> <!-- 下拉个人信息-->
 						<ul class="dropdown-menu animated fadeInRight w">
-							<li><a onclick="personInfo();"> <i
+							<li><a onClick="personInfo();"> <i
 									class="icon-user icon text-success-lter"></i> <span>个人信息</span>
 							</a></li>
 							<li><a href=""> <i
@@ -451,7 +451,7 @@
 					<div class="col w-lg bg-light lter b-l bg-auto">
 						<div class="wrapper">
 							<div class="">
-								<i class="glyphicon glyphicon-flag well-lg text-success"></i> <span
+								<i class="glyphicon glyphicon-flag text-2x text-success"></i> <span
 									class="m-t-xs m-b-xs STYLE2">人物风云榜Top10</span>
 								<div style="height: 180px; overflow-y: auto; overflow-x: hidden">
 									<ul class="list-group no-bg no-borders pull-in">
@@ -480,7 +480,7 @@
 							<!--平台资讯-->
 							<div class="panel b-a">
 
-								<i class="glyphicon glyphicon-globe well-lg text-success-dker"></i>
+								<i class="glyphicon glyphicon-globe text-2x text-success-dker"></i>
 								<span class="m-t-xs m-b-xs STYLE3">平台资讯</span>
 
 								</li>
